@@ -443,6 +443,12 @@ def route_all(grid, pads, edge_poly, bnd, hint=None):
     order += sorted([n for n in nets if n in PLANE_NETS], key=hpwl)
     order += sorted([n for n in nets if n not in POWER_NETS and n not in PLANE_NETS and n in fpga], key=hpwl)
     order += sorted([n for n in nets if n not in POWER_NETS and n not in PLANE_NETS and n not in fpga], key=hpwl)
+    seed = os.environ.get('SV16_SEED')
+    if seed:
+        import random
+        sig = [n for n in order if n not in POWER_NETS and n not in PLANE_NETS]
+        random.Random(int(seed)).shuffle(sig)
+        order = [n for n in order if n in POWER_NETS or n in PLANE_NETS] + sig
     if hint:
         order = [n for n in hint if n in order] + [n for n in order if n not in hint]
 
