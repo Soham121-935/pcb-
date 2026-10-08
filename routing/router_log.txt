@@ -1,0 +1,391 @@
+=== pass 1: grid 1221x1229 @ 0.1 mm, order hint=no
+[    0.0s] U5_SW          pads=  3 OK
+[    0.1s] J9_VIN         pads=  2 OK
+[    0.1s] USB_VBUS       pads=  6 OK
+[    0.2s] U6_SW          pads=  4 OK
+[    0.3s] VM_IN          pads=  8 OK
+[    0.4s] 5V_USB         pads=  3 OK
+[   51.4s] 1V1            pads= 16 PARTIAL (6 pads open)
+[   85.1s] 2V5            pads= 12 PARTIAL (4 pads open)
+[   86.2s] VM_IN_RAW      pads=  3 OK
+[   92.5s] CFG_2          pads=  2 OK
+[   92.6s] clk_25m        pads=  2 OK
+[   92.6s] led3           pads=  2 OK
+[   92.6s] led2           pads=  2 OK
+[   92.7s] CFG_0          pads=  2 OK
+[   92.7s] led1           pads=  2 OK
+[   92.8s] CFG_1          pads=  2 OK
+[   92.8s] led0           pads=  2 OK
+[   92.9s] flash_miso     pads=  2 OK
+[   92.9s] A12            pads=  2 OK
+[   92.9s] A14            pads=  2 OK
+[   93.0s] CCLK           pads=  3 OK
+[   93.2s] A0             pads=  2 OK
+[   93.2s] A13            pads=  2 OK
+[   93.3s] flash_cs_n     pads=  3 OK
+[   93.5s] flash_mosi     pads=  2 OK
+[   93.6s] flash_sck      pads=  2 OK
+[   93.6s] uart_rx        pads=  3 OK
+[   93.7s] A15            pads=  2 OK
+[   93.8s] B10            pads=  2 OK
+[   93.9s] A10            pads=  2 OK
+[   94.0s] A11            pads=  2 OK
+[   94.1s] B8             pads=  2 OK
+[   94.2s] uart_tx        pads=  3 OK
+[   94.4s] A3             pads=  2 OK
+[   94.4s] B11            pads=  2 OK
+[   94.6s] A8             pads=  2 OK
+[   94.7s] B9             pads=  2 OK
+[   94.8s] spi0_cs_n      pads=  2 OK
+[   95.1s] A9             pads=  2 OK
+[   95.3s] A5             pads=  2 OK
+[   95.6s] spi0_sck       pads=  2 OK
+[   95.7s] spi0_mosi      pads=  2 OK
+[   95.8s] B7             pads=  2 OK
+[   96.7s] A6             pads=  2 OK
+[  103.4s] B14            pads=  2 PARTIAL (1 pads open)
+[  105.3s] B12            pads=  2 OK
+[  106.8s] A7             pads=  2 OK
+[  107.1s] spi0_miso      pads=  2 OK
+[  107.7s] B15            pads=  2 OK
+[  108.3s] B13            pads=  2 OK
+[  108.5s] B6             pads=  2 OK
+[  108.8s] B4             pads=  2 OK
+[  109.0s] B2             pads=  2 OK
+[  109.3s] B0             pads=  2 OK
+[  109.6s] B5             pads=  2 OK
+[  115.6s] A2             pads=  3 PARTIAL (1 pads open)
+[  115.6s] B3             pads=  2 PARTIAL (1 pads open)
+[  115.9s] B1             pads=  2 OK
+[  116.4s] A1             pads=  3 OK
+[  116.7s] motor_dir1     pads=  2 OK
+[  116.8s] ext_rst_n      pads=  5 OK
+[  117.2s] pwm_out        pads=  2 OK
+[  117.2s] motor_dir2     pads=  2 PARTIAL (1 pads open)
+[  118.3s] A4             pads=  3 OK
+[  118.4s] motor_fault_n  pads=  3 PARTIAL (2 pads open)
+[  118.5s] TDO            pads=  3 OK
+[  119.3s] TDI            pads=  3 OK
+[  119.6s] PROGRAMN       pads=  6 OK
+[  119.7s] TMS            pads=  3 OK
+[  120.7s] TCK            pads=  3 OK
+[  121.1s] DONE           pads=  5 PARTIAL (4 pads open)
+[  121.4s] INITN          pads=  5 PARTIAL (4 pads open)
+[  121.4s] D7_A           pads=  2 OK
+[  121.4s] U6_FREQ        pads=  2 OK
+[  121.4s] Q4_B           pads=  2 OK
+[  121.5s] Q2_B           pads=  2 OK
+[  121.5s] U2_HOLD        pads=  2 OK
+[  121.5s] D1_A           pads=  2 OK
+[  121.5s] CC1            pads=  2 OK
+[  121.6s] D6_K           pads=  2 OK
+[  121.6s] U4_TXD         pads=  2 OK
+[  121.6s] led3_k         pads=  2 OK
+[  121.6s] led0_k         pads=  2 OK
+[  121.6s] led1_k         pads=  2 OK
+[  121.6s] led2_k         pads=  2 OK
+[  121.7s] U2_WP          pads=  2 OK
+[  121.7s] U4_RXD         pads=  2 OK
+[  121.7s] CC2            pads=  2 OK
+[  121.8s] U3_WP          pads=  2 OK
+[  121.8s] U6_COMP        pads=  2 OK
+[  121.8s] U3_HOLD        pads=  2 OK
+[  121.9s] USB_DN         pads=  3 OK
+[  121.9s] Q2_C           pads=  2 OK
+[  121.9s] U6_BST         pads=  2 OK
+[  121.9s] U6_COMP_RC     pads=  2 OK
+[  122.0s] Q1_G           pads=  3 OK
+[  126.8s] USB_DP         pads=  3 PARTIAL (1 pads open)
+[  126.8s] U7_EN          pads=  3 OK
+[  126.9s] J10_TX         pads=  2 OK
+[  126.9s] U2_DO          pads=  2 OK
+[  126.9s] U4_V3          pads=  2 OK
+[  126.9s] DTR_F          pads=  2 OK
+[  127.0s] U5_BST         pads=  2 OK
+[  127.0s] Q4_C           pads=  2 OK
+[  127.1s] U6_EN          pads=  3 OK
+[  127.1s] J10_RX         pads=  2 OK
+[  127.1s] U5_EN          pads=  3 OK
+[  127.2s] USB_DP_F       pads=  2 OK
+[  127.2s] U2_DI          pads=  2 OK
+[  127.3s] USB_DN_F       pads=  2 OK
+[  127.3s] U2_CLK         pads=  2 OK
+[  127.4s] U2_CS          pads=  3 OK
+[  127.5s] U5_FB          pads=  3 OK
+[  127.5s] FB_1V1         pads=  3 OK
+[  127.6s] Y2_XI          pads=  3 OK
+[  127.7s] Y2_XO          pads=  3 OK
+[  128.5s] U4_DTR         pads=  2 OK
+=== pass 1: failed pad connections = 25
+=== pass 2: grid 1221x1229 @ 0.1 mm, order hint=yes
+[   54.2s] 1V1            pads= 16 PARTIAL (6 pads open)
+[   88.4s] 2V5            pads= 12 PARTIAL (4 pads open)
+[   88.5s] B14            pads=  2 OK
+[   88.7s] A2             pads=  3 OK
+[   88.8s] B3             pads=  2 OK
+[   88.9s] motor_dir2     pads=  2 OK
+[   89.3s] motor_fault_n  pads=  3 OK
+[   89.4s] DONE           pads=  5 OK
+[   89.4s] INITN          pads=  5 PARTIAL (4 pads open)
+[   89.5s] USB_DP         pads=  3 OK
+[   89.5s] U5_SW          pads=  3 OK
+[   89.5s] J9_VIN         pads=  2 OK
+[   89.6s] USB_VBUS       pads=  6 OK
+[   89.6s] U6_SW          pads=  4 OK
+[   89.8s] VM_IN          pads=  8 OK
+[   89.8s] 5V_USB         pads=  3 OK
+[   90.5s] VM_IN_RAW      pads=  3 OK
+[   97.1s] CFG_2          pads=  2 OK
+[   97.2s] clk_25m        pads=  2 OK
+[   97.3s] led3           pads=  2 OK
+[   97.3s] led2           pads=  2 PARTIAL (1 pads open)
+[   97.4s] CFG_0          pads=  2 OK
+[   97.4s] led1           pads=  2 OK
+[   97.4s] CFG_1          pads=  2 PARTIAL (1 pads open)
+[   97.4s] led0           pads=  2 OK
+[   97.5s] flash_miso     pads=  2 OK
+[   97.5s] A12            pads=  2 OK
+[   97.6s] A14            pads=  2 OK
+[   97.6s] CCLK           pads=  3 PARTIAL (2 pads open)
+[   97.7s] A0             pads=  2 OK
+[   97.8s] A13            pads=  2 OK
+[   97.9s] flash_cs_n     pads=  3 OK
+[   98.0s] flash_mosi     pads=  2 OK
+[   98.2s] flash_sck      pads=  2 OK
+[   98.3s] uart_rx        pads=  3 OK
+[   98.4s] A15            pads=  2 OK
+[   98.5s] B10            pads=  2 OK
+[   98.6s] A10            pads=  2 OK
+[   98.7s] A11            pads=  2 OK
+[   98.8s] B8             pads=  2 OK
+[   98.9s] uart_tx        pads=  3 OK
+[  105.4s] A3             pads=  2 PARTIAL (1 pads open)
+[  105.6s] B11            pads=  2 OK
+[  105.7s] A8             pads=  2 OK
+[  105.9s] B9             pads=  2 OK
+[  106.0s] spi0_cs_n      pads=  2 OK
+[  106.5s] A9             pads=  2 OK
+[  113.5s] A5             pads=  2 PARTIAL (1 pads open)
+[  113.7s] spi0_sck       pads=  2 OK
+[  113.8s] spi0_mosi      pads=  2 OK
+[  114.0s] B7             pads=  2 OK
+[  120.8s] A6             pads=  2 PARTIAL (1 pads open)
+[  120.8s] B12            pads=  2 OK
+[  127.8s] A7             pads=  2 PARTIAL (1 pads open)
+[  128.0s] spi0_miso      pads=  2 OK
+[  135.1s] B15            pads=  2 PARTIAL (1 pads open)
+[  135.8s] B13            pads=  2 OK
+[  136.2s] B6             pads=  2 OK
+[  136.6s] B4             pads=  2 OK
+[  136.9s] B2             pads=  2 OK
+[  137.1s] B0             pads=  2 PARTIAL (1 pads open)
+[  137.2s] B5             pads=  2 PARTIAL (1 pads open)
+[  137.4s] B1             pads=  2 PARTIAL (1 pads open)
+[  137.7s] A1             pads=  3 OK
+[  137.9s] motor_dir1     pads=  2 OK
+[  138.4s] ext_rst_n      pads=  5 PARTIAL (4 pads open)
+[  138.8s] pwm_out        pads=  2 OK
+[  145.5s] A4             pads=  3 PARTIAL (1 pads open)
+[  145.6s] TDO            pads=  3 PARTIAL (2 pads open)
+[  145.6s] TDI            pads=  3 PARTIAL (2 pads open)
+[  145.6s] PROGRAMN       pads=  6 PARTIAL (5 pads open)
+[  145.8s] TMS            pads=  3 OK
+[  145.8s] TCK            pads=  3 PARTIAL (2 pads open)
+[  145.8s] D7_A           pads=  2 OK
+[  145.8s] U6_FREQ        pads=  2 OK
+[  145.8s] Q4_B           pads=  2 OK
+[  145.9s] Q2_B           pads=  2 OK
+[  145.9s] U2_HOLD        pads=  2 OK
+[  145.9s] D1_A           pads=  2 OK
+[  145.9s] CC1            pads=  2 OK
+[  145.9s] D6_K           pads=  2 OK
+[  146.0s] U4_TXD         pads=  2 OK
+[  146.0s] led3_k         pads=  2 OK
+[  146.0s] led0_k         pads=  2 OK
+[  146.1s] led1_k         pads=  2 OK
+[  146.1s] led2_k         pads=  2 OK
+[  146.1s] U2_WP          pads=  2 OK
+[  146.2s] U4_RXD         pads=  2 OK
+[  146.2s] CC2            pads=  2 OK
+[  146.2s] U3_WP          pads=  2 OK
+[  146.3s] U6_COMP        pads=  2 OK
+[  146.3s] U3_HOLD        pads=  2 OK
+[  157.8s] USB_DN         pads=  3 PARTIAL (2 pads open)
+[  157.8s] Q2_C           pads=  2 OK
+[  157.8s] U6_BST         pads=  2 OK
+[  157.8s] U6_COMP_RC     pads=  2 OK
+[  157.9s] Q1_G           pads=  3 OK
+[  157.9s] U7_EN          pads=  3 OK
+[  158.0s] J10_TX         pads=  2 OK
+[  158.0s] U2_DO          pads=  2 OK
+[  158.0s] U4_V3          pads=  2 OK
+[  158.1s] DTR_F          pads=  2 OK
+[  158.1s] U5_BST         pads=  2 OK
+[  158.2s] Q4_C           pads=  2 OK
+[  158.2s] U6_EN          pads=  3 OK
+[  158.3s] J10_RX         pads=  2 OK
+[  158.4s] U5_EN          pads=  3 OK
+[  158.4s] USB_DP_F       pads=  2 OK
+[  158.4s] U2_DI          pads=  2 OK
+[  158.5s] USB_DN_F       pads=  2 OK
+[  158.6s] U2_CLK         pads=  2 OK
+[  158.7s] U2_CS          pads=  3 OK
+[  158.8s] U5_FB          pads=  3 OK
+[  158.8s] FB_1V1         pads=  3 OK
+[  158.9s] Y2_XI          pads=  3 OK
+[  159.0s] Y2_XO          pads=  3 OK
+[  160.1s] U4_DTR         pads=  2 OK
+=== pass 2: failed pad connections = 45
+=== pass 3: grid 1221x1229 @ 0.1 mm, order hint=yes
+[   50.6s] 1V1            pads= 16 PARTIAL (6 pads open)
+[   82.4s] 2V5            pads= 12 PARTIAL (4 pads open)
+[   82.7s] INITN          pads=  5 OK
+[   87.2s] led2           pads=  2 OK
+[   87.2s] CFG_1          pads=  2 OK
+[   87.3s] CCLK           pads=  3 OK
+[   87.4s] A3             pads=  2 OK
+[   87.5s] A5             pads=  2 OK
+[   87.7s] A6             pads=  2 OK
+[   87.9s] A7             pads=  2 OK
+[   88.0s] B15            pads=  2 OK
+[   88.1s] B0             pads=  2 OK
+[   88.1s] B5             pads=  2 OK
+[   88.5s] B1             pads=  2 OK
+[   88.6s] ext_rst_n      pads=  5 OK
+[   89.2s] A4             pads=  3 OK
+[   89.2s] TDO            pads=  3 OK
+[   90.1s] TDI            pads=  3 OK
+[   90.3s] PROGRAMN       pads=  6 OK
+[   91.3s] TCK            pads=  3 OK
+[   91.3s] USB_DN         pads=  3 OK
+[   91.3s] U5_SW          pads=  3 OK
+[   91.4s] J9_VIN         pads=  2 OK
+[   91.5s] USB_VBUS       pads=  6 OK
+[   91.5s] U6_SW          pads=  4 OK
+[   91.6s] VM_IN          pads=  8 OK
+[   91.7s] 5V_USB         pads=  3 OK
+[   94.1s] VM_IN_RAW      pads=  3 OK
+[   96.2s] CFG_2          pads=  2 PARTIAL (1 pads open)
+[   96.3s] clk_25m        pads=  2 OK
+[   96.4s] led3           pads=  2 OK
+[   96.4s] CFG_0          pads=  2 PARTIAL (1 pads open)
+[   96.4s] led1           pads=  2 OK
+[   96.4s] led0           pads=  2 OK
+[   96.5s] flash_miso     pads=  2 OK
+[   96.5s] A12            pads=  2 OK
+[   96.6s] A14            pads=  2 OK
+[  101.0s] A0             pads=  2 PARTIAL (1 pads open)
+[  101.1s] A13            pads=  2 OK
+[  101.2s] flash_cs_n     pads=  3 OK
+[  101.3s] flash_mosi     pads=  2 OK
+[  101.5s] flash_sck      pads=  2 OK
+[  101.6s] uart_rx        pads=  3 OK
+[  101.7s] A15            pads=  2 OK
+[  101.8s] B10            pads=  2 OK
+[  101.9s] A10            pads=  2 OK
+[  102.0s] A11            pads=  2 OK
+[  102.1s] B8             pads=  2 OK
+[  102.2s] uart_tx        pads=  3 OK
+[  102.4s] B11            pads=  2 OK
+[  102.5s] A8             pads=  2 OK
+[  102.7s] B9             pads=  2 OK
+[  102.9s] spi0_cs_n      pads=  2 OK
+[  103.1s] A9             pads=  2 OK
+[  103.2s] spi0_sck       pads=  2 OK
+[  103.3s] spi0_mosi      pads=  2 OK
+[  103.5s] B7             pads=  2 OK
+[  110.1s] B14            pads=  2 PARTIAL (1 pads open)
+[  116.7s] B12            pads=  2 PARTIAL (1 pads open)
+[  116.9s] spi0_miso      pads=  2 OK
+[  124.0s] B13            pads=  2 PARTIAL (1 pads open)
+[  124.2s] B6             pads=  2 OK
+[  124.3s] B4             pads=  2 OK
+[  124.4s] B2             pads=  2 OK
+[  126.0s] A2             pads=  3 OK
+[  126.6s] B3             pads=  2 OK
+[  132.0s] A1             pads=  3 PARTIAL (1 pads open)
+[  132.3s] motor_dir1     pads=  2 OK
+[  132.7s] pwm_out        pads=  2 OK
+[  132.8s] motor_dir2     pads=  2 PARTIAL (1 pads open)
+[  132.9s] motor_fault_n  pads=  3 PARTIAL (2 pads open)
+[  132.9s] TMS            pads=  3 PARTIAL (2 pads open)
+[  134.1s] DONE           pads=  5 OK
+[  134.1s] D7_A           pads=  2 OK
+[  134.2s] U6_FREQ        pads=  2 OK
+[  134.2s] Q4_B           pads=  2 OK
+[  134.2s] Q2_B           pads=  2 OK
+[  134.2s] U2_HOLD        pads=  2 OK
+[  134.2s] D1_A           pads=  2 OK
+[  134.3s] CC1            pads=  2 OK
+[  134.3s] D6_K           pads=  2 OK
+[  134.3s] U4_TXD         pads=  2 OK
+[  134.3s] led3_k         pads=  2 OK
+[  134.4s] led0_k         pads=  2 OK
+[  134.4s] led1_k         pads=  2 OK
+[  134.4s] led2_k         pads=  2 OK
+[  134.5s] U2_WP          pads=  2 OK
+[  134.5s] U4_RXD         pads=  2 OK
+[  134.5s] CC2            pads=  2 OK
+[  134.6s] U3_WP          pads=  2 OK
+[  134.6s] U6_COMP        pads=  2 OK
+[  134.6s] U3_HOLD        pads=  2 OK
+[  134.6s] Q2_C           pads=  2 OK
+[  134.7s] U6_BST         pads=  2 OK
+[  134.7s] U6_COMP_RC     pads=  2 OK
+[  134.8s] Q1_G           pads=  3 OK
+[  134.9s] USB_DP         pads=  3 OK
+[  134.9s] U7_EN          pads=  3 OK
+[  134.9s] J10_TX         pads=  2 OK
+[  135.0s] U2_DO          pads=  2 OK
+[  135.0s] U4_V3          pads=  2 OK
+[  135.0s] DTR_F          pads=  2 OK
+[  135.1s] U5_BST         pads=  2 OK
+[  135.1s] Q4_C           pads=  2 OK
+[  135.1s] U6_EN          pads=  3 OK
+[  135.2s] J10_RX         pads=  2 OK
+[  135.2s] U5_EN          pads=  3 OK
+[  135.2s] USB_DP_F       pads=  2 OK
+[  135.3s] U2_DI          pads=  2 OK
+[  135.4s] USB_DN_F       pads=  2 OK
+[  135.5s] U2_CLK         pads=  2 OK
+[  135.6s] U2_CS          pads=  3 OK
+[  135.6s] U5_FB          pads=  3 OK
+[  135.7s] FB_1V1         pads=  3 OK
+[  135.8s] Y2_XI          pads=  3 OK
+[  136.0s] Y2_XO          pads=  3 OK
+[  138.7s] U4_DTR         pads=  2 OK
+=== pass 3: failed pad connections = 22
+{
+ "tracks": 501,
+ "vias": 333,
+ "nets_routed": 107,
+ "nets_total": 119,
+ "stats": {
+  "expansions": 10362329,
+  "searches": 355
+ },
+ "seconds": 429.8
+}
+failed connections: 22
+    ('1V1', 'U1.130')
+    ('1V1', 'U1.20')
+    ('1V1', 'U1.29')
+    ('1V1', 'U1.38')
+    ('1V1', 'U1.66')
+    ('1V1', 'U1.83')
+    ('2V5', 'U1.17')
+    ('2V5', 'U1.132')
+    ('2V5', 'U1.96')
+    ('2V5', 'U1.53')
+    ('CFG_2', 'R7.1')
+    ('CFG_0', 'R6.1')
+    ('A0', 'U1.45')
+    ('B14', 'J4.17')
+    ('B12', 'J4.15')
+    ('B13', 'J4.16')
+    ('A1', 'U1.46')
+    ('motor_dir2', 'J6.5')
+    ('motor_fault_n', 'R19.1')
+    ('motor_fault_n', 'J6.6')
+    ('TMS', 'J2.2')
+    ('TMS', 'J1.6')

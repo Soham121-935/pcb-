@@ -1,0 +1,27 @@
+{
+  "grid_mm": 0.1,
+  "signal_track_mm": 0.15,
+  "power_track_mm": 0.3,
+  "clearance_mm": 0.15,
+  "router_mask_margin_mm": 0.010000000000000009,
+  "via_diameter_mm": 0.5,
+  "via_drill_mm": 0.25,
+  "edge_clearance_mm": 0.3,
+  "plane_nets": {
+    "GND": "In1.Cu",
+    "3V3": "In2.Cu"
+  },
+  "power_width_nets": [
+    "1V1",
+    "2V5",
+    "5V_USB",
+    "J9_VIN",
+    "U5_SW",
+    "U6_SW",
+    "USB_VBUS",
+    "VM_IN",
+    "VM_IN_RAW"
+  ],
+  "rotation_convention": "x'=x*cos+y*sin ; y'=-x*sin+y*cos (KiCad)",
+  "router": "route_sv16.py grid A*, 8-direction, layer change cost 3, passes=3"
+}
