@@ -24779,7 +24779,7 @@
 				)
 			)
 		)
-		(property "Value" "25 MHz ACTIVE XO (4-pin)"
+		(property "Value" "ECS-2333-250-BN-TR 25MHz 3.3V XO"
 			(at 0 2.45 0)
 			(layer "F.Fab")
 			(uuid "e04dade4-d866-434c-8333-0abd14ed8e15")
