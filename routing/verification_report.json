@@ -1,0 +1,739 @@
+{
+ "summary": {
+  "file": "final.kicad_pcb",
+  "pads": 602,
+  "tracks": 12462,
+  "vias": 333,
+  "nets_with_pads": 119,
+  "nets_fully_connected": 107,
+  "nets_open": 12,
+  "unconnected_items": 22,
+  "shorts": 0,
+  "clearance_violations": 0,
+  "hole_to_hole": 0,
+  "board_edge_violations": 0,
+  "dangling_tracks": 0,
+  "dangling_vias": 0,
+  "plane_islands": {
+   "GND_islands": 2,
+   "3V3_islands": 4
+  }
+ },
+ "unconnected": [
+  [
+   "2V5",
+   "U1.17",
+   "not connected to net"
+  ],
+  [
+   "2V5",
+   "U1.53",
+   "not connected to net"
+  ],
+  [
+   "2V5",
+   "U1.96",
+   "not connected to net"
+  ],
+  [
+   "2V5",
+   "U1.132",
+   "not connected to net"
+  ],
+  [
+   "1V1",
+   "U1.20",
+   "not connected to net"
+  ],
+  [
+   "1V1",
+   "U1.29",
+   "not connected to net"
+  ],
+  [
+   "1V1",
+   "U1.38",
+   "not connected to net"
+  ],
+  [
+   "1V1",
+   "U1.66",
+   "not connected to net"
+  ],
+  [
+   "1V1",
+   "U1.83",
+   "not connected to net"
+  ],
+  [
+   "1V1",
+   "U1.130",
+   "not connected to net"
+  ],
+  [
+   "A0",
+   "U1.45",
+   "not connected to net"
+  ],
+  [
+   "A1",
+   "U1.46",
+   "not connected to net"
+  ],
+  [
+   "B12",
+   "J4.15",
+   "not connected to net"
+  ],
+  [
+   "B13",
+   "J4.16",
+   "not connected to net"
+  ],
+  [
+   "B14",
+   "J4.17",
+   "not connected to net"
+  ],
+  [
+   "CFG_2",
+   "R7.1",
+   "not connected to net"
+  ],
+  [
+   "CFG_0",
+   "R6.1",
+   "not connected to net"
+  ],
+  [
+   "TMS",
+   "J2.2",
+   "not connected to net"
+  ],
+  [
+   "TMS",
+   "J1.6",
+   "not connected to net"
+  ],
+  [
+   "motor_dir2",
+   "J6.5",
+   "not connected to net"
+  ],
+  [
+   "motor_fault_n",
+   "R19.1",
+   "not connected to net"
+  ],
+  [
+   "motor_fault_n",
+   "J6.6",
+   "not connected to net"
+  ]
+ ],
+ "issues": {
+  "shorts": [],
+  "clearance": [],
+  "hole_to_hole": [],
+  "board_edge": []
+ },
+ "dangling_tracks": [],
+ "dangling_vias": [],
+ "per_net": {
+  "U3_WP": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "3V3": {
+   "pads": 63,
+   "open": 0,
+   "plane": "In2.Cu"
+  },
+  "U5_FB": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "GND": {
+   "pads": 104,
+   "open": 0,
+   "plane": "In1.Cu"
+  },
+  "USB_DP": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "USB_DN": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "USB_DN_F": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "USB_VBUS": {
+   "pads": 6,
+   "open": 0,
+   "components": 1
+  },
+  "USB_DP_F": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "U7_EN": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "2V5": {
+   "pads": 12,
+   "open": 4,
+   "components": 5
+  },
+  "CC1": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "A2": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "U2_DI": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "1V1": {
+   "pads": 16,
+   "open": 6,
+   "components": 7
+  },
+  "Q4_B": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "Q4_C": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "U4_V3": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "A0": {
+   "pads": 2,
+   "open": 1,
+   "components": 2
+  },
+  "A1": {
+   "pads": 3,
+   "open": 1,
+   "components": 2
+  },
+  "A3": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "A4": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "A5": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "A6": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "A7": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "Q2_B": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "Q2_C": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "flash_cs_n": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "U2_CS": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "D1_A": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "U5_SW": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "VM_IN": {
+   "pads": 8,
+   "open": 0,
+   "components": 1
+  },
+  "U5_EN": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "U5_BST": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "D6_K": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "J10_TX": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "J10_RX": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "Y2_XI": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "U6_SW": {
+   "pads": 4,
+   "open": 0,
+   "components": 1
+  },
+  "U4_DTR": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "DTR_F": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "B12": {
+   "pads": 2,
+   "open": 1,
+   "components": 2
+  },
+  "B13": {
+   "pads": 2,
+   "open": 1,
+   "components": 2
+  },
+  "B14": {
+   "pads": 2,
+   "open": 1,
+   "components": 2
+  },
+  "B15": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "led0": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "led1": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "led2": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "led3": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "CCLK": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "INITN": {
+   "pads": 5,
+   "open": 0,
+   "components": 1
+  },
+  "DONE": {
+   "pads": 5,
+   "open": 0,
+   "components": 1
+  },
+  "PROGRAMN": {
+   "pads": 6,
+   "open": 0,
+   "components": 1
+  },
+  "CFG_2": {
+   "pads": 2,
+   "open": 1,
+   "components": 2
+  },
+  "CFG_1": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "TDO": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "TDI": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "CFG_0": {
+   "pads": 2,
+   "open": 1,
+   "components": 2
+  },
+  "TCK": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "TMS": {
+   "pads": 3,
+   "open": 2,
+   "components": 3
+  },
+  "uart_rx": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "uart_tx": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "pwm_out": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "motor_dir1": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "A8": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "A9": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "A10": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "motor_dir2": {
+   "pads": 2,
+   "open": 1,
+   "components": 2
+  },
+  "motor_fault_n": {
+   "pads": 3,
+   "open": 2,
+   "components": 3
+  },
+  "A11": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "A12": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "A13": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "A14": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "A15": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "flash_sck": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "flash_mosi": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "flash_miso": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "spi0_sck": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "spi0_cs_n": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "spi0_mosi": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "spi0_miso": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "B8": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "B9": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "B10": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "B11": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "B7": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "clk_25m": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "ext_rst_n": {
+   "pads": 5,
+   "open": 0,
+   "components": 1
+  },
+  "B0": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "B1": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "B2": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "B3": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "B4": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "B5": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "B6": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "FB_1V1": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "U3_HOLD": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "U6_COMP": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "U6_COMP_RC": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "Y2_XO": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "U2_WP": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "VM_IN_RAW": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "5V_USB": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "led3_k": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "led0_k": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "Q1_G": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "U4_TXD": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "J9_VIN": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "U4_RXD": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "U6_EN": {
+   "pads": 3,
+   "open": 0,
+   "components": 1
+  },
+  "U6_FREQ": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "U6_BST": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "CC2": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "U2_DO": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "led1_k": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "D7_A": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "led2_k": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "U2_HOLD": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  },
+  "U2_CLK": {
+   "pads": 2,
+   "open": 0,
+   "components": 1
+  }
+ }
+}
