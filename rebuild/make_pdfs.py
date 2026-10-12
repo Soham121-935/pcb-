@@ -89,7 +89,7 @@ todo=[
   '10k 0603 1% resistor: YAGEO RC0603FR-0710KL (1%, 0603), 1 piece for R47. To buy. Use this 1% part, not the 5% RC0603JR part, because the spec asks for 1%.',
   '22 pF 0805 C0G caps: YAGEO CC0805JRNPO9BN220 (22 pF, 50 V, 0805, 5%), 2 pieces (C36, C37). To buy.',
   '4.7k (R5, R25) and 1k (R6-R8): use the 0805 and 1206 packs you already bought, with the footprint changes in section A. No purchase needed.',
-  'Your own list: barrel jack J9, SW1/SW2, headers J1-J6, J10, JP1 shunt.',
+  'Connectors and switches (barrel jack J9, SW1/SW2, headers J1-J6, J10, JP1 shunt): you already have these. Not in the cart screenshots, so confirm the parts and footprints match the board.',
  ]),
  ('F. Routing and checks (after A-D are done)', [
   'Re-route the board from the updated placement. Tracks in this file are not verified.',
