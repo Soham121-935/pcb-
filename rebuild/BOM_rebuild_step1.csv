@@ -68,17 +68,17 @@ R46,33k 1206,33k (changed),1206,(shared),OK
 R47,"10k 0603 1% (YAGEO RC0603FR-0710KL, 1%)",10k,1206 - change to 0603,0,BUY 10k 0603 1% (Yageo RC0603FR-0710KL); PENDING footprint change 1206->0603
 R48,AP62300 EN divider (value not given in spec),100k,0603,(shared),UNDECIDED
 R49,AP62300 EN divider (value not given in spec),33k,1206,(shared),UNDECIDED
-J1,JTAG 1x10 header,JTAG,2.54mm 1x10,0,USER HAS (not in screenshots) - confirm
-J2,JTAG 2x5 1.27mm (optional),JTAG-1.27,1.27mm 2x5,0,OPTIONAL
-J3,EXP-A 2x10,EXP-A,2.54mm 2x10,0,USER HAS (not in screenshots) - confirm
-J4,EXP-B 2x10,EXP-B,2.54mm 2x10,0,USER HAS (not in screenshots) - confirm
-J5,EXP-C 1x10,EXP-C,2.54mm 1x10,0,USER HAS (not in screenshots) - confirm
-J6,MOTOR 1x6 keyed,MOTOR,2.54mm 1x6,0,USER HAS (not in screenshots) - confirm
-J7,SPARE 2x25 footprint only,absent,-,0,ADD footprint (not fitted)
+J1,"Standard 2.54 mm straight male pin header, 1x10 (most available). Footprint unchanged.",JTAG,2.54mm 1x10,0,USER HAS (not in screenshots) - confirm
+J2,Spec: 1.27 mm 2x5 box header. Less common; leave unpopulated and use J1 (spec option).,JTAG-1.27,1.27mm 2x5,0,OPTIONAL
+J3,"Standard 2.54 mm straight male pin header, 2x10 (most available). Footprint unchanged.",EXP-A,2.54mm 2x10,0,USER HAS (not in screenshots) - confirm
+J4,"Standard 2.54 mm straight male pin header, 2x10 (most available). Footprint unchanged.",EXP-B,2.54mm 2x10,0,USER HAS (not in screenshots) - confirm
+J5,"Standard 2.54 mm straight male pin header, 1x10 (most available). Footprint unchanged.",EXP-C,2.54mm 1x10,0,USER HAS (not in screenshots) - confirm
+J6,"Standard 2.54 mm straight male pin header, 1x6 (most available). Spec says keyed: add keying notch, or use a shrouded 1x6 header.",MOTOR,2.54mm 1x6,0,USER HAS (not in screenshots) - confirm
+J7,"Standard 2.54 mm straight male pin header, 2x25 (footprint only, not fitted).",absent,-,0,ADD footprint (not fitted)
 J8,USB-C 16-pin HRO,USB-C,HRO TYPE-C-31-M-12,4,OK
 J9,Barrel jack 5.5/2.1,7-12 V,CUI PJ-102AH,0,USER HAS (not in screenshots) - confirm
-J10,CONSOLE 1x4,CONSOLE,2.54mm 1x4,0,USER HAS (not in screenshots) - confirm
-JP1,2-pin + shunt,DTR ENABLE,1x02,0,USER HAS (not in screenshots) - confirm
+J10,"Standard 2.54 mm straight male pin header, 1x4 (most available). Footprint unchanged.",CONSOLE,2.54mm 1x4,0,USER HAS (not in screenshots) - confirm
+JP1,"Standard 2.54 mm straight male pin header, 1x2, with shunt (most available). Footprint unchanged.",DTR ENABLE,1x02,0,USER HAS (not in screenshots) - confirm
 SW1,6x6 tact,RESET,SW_PUSH_6mm,0,USER HAS (not in screenshots) - confirm
 SW2,6x6 tact,RECONFIG,SW_PUSH_6mm,0,USER HAS (not in screenshots) - confirm
 TP1-TP6,1 mm pads,OK,TestPoint,-,OK
