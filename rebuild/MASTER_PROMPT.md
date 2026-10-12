@@ -98,7 +98,7 @@ For each row, verify the KiCad library name exists in your local footprint libra
 | R10 | Resistor_SMD:R_1206_3216Metric | Resistor_SMD:R_0805_2012Metric | same |
 | R11 | Resistor_SMD:R_1206_3216Metric | Resistor_SMD:R_0805_2012Metric | same |
 | R12 | Resistor_SMD:R_1206_3216Metric | Resistor_SMD:R_0805_2012Metric | same |
-| R47 | Resistor_SMD:R_1206_3216Metric | Resistor_SMD:R_0603_1608Metric | 10k 1% 0603 (to buy, Yageo RC0603FR-0710KL) |
+| R47 | Resistor_SMD:R_1206_3216Metric | Resistor_SMD:R_0603_1608Metric | 10k 5% 0603 (Yageo RC0603JR-0710KL, in cart) |
 | FB1 | Inductor_SMD:L_0603_1608Metric (or the 0603 ferrite footprint) | Inductor_SMD:L_0805_2012Metric | 600R ferrite 0805 (TDK MPZ2012S601ATD25, in cart, qty 2) |
 | Y2 | Crystal:Crystal_HC49-4H_Vertical | Crystal:Crystal_SMD_HC49-SD (verify; or the footprint of the bought SMD HC49/U 12 MHz crystal) | SMD 12 MHz crystal (to buy) |
 | L1 | Inductor_SMD:L_Sunlord_SWPA6045S | Inductor_SMD:L_Sunlord_MWSA0518_5.4x5.2mm (verify pads against the bought CD54 datasheet) | spec footprint |
@@ -129,7 +129,7 @@ FB1 (600R ferrite): change the footprint to 0805 (Inductor_SMD:L_0805_2012Metric
 - Y1 YIC OSC25M-3.3I/S3-25T (active, 4-SMD 3.2x2.5 mm, not yet in hand)
 - Y2 12 MHz SMD crystal (not bought)
 - D8, D9, D11: third SS34 (2 of 3 bought)
-- 10k 0603 1% resistors: 12 pieces (Yageo RC0603FR-0710KL): R1, R13-R19, R26, R32 and R47. The user uses 1% parts only.
+- 10k 0603 5% resistors: 12 pieces (Yageo RC0603JR-0710KL, in cart, qty 110): R1, R13-R19, R26, R32 and R47. The user uses 5% parts only.
 - 22 pF 0805 C0G caps: 2 pieces (Yageo CC0805JRNPO9BN220).
 - Barrel jack J9, SW1, SW2, JP1 shunt, headers: the user says they already have these; confirm the footprints match.
 

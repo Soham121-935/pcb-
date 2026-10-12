@@ -41,18 +41,18 @@ C26-C29,100nF 0603,100nF,0603,(shared),OK
 C31,470nF 0603,470nF,0603,(shared),OK
 C33,100nF 0603,100nF,0603,(shared),OK
 C38,100nF 0603,100nF,0603,(shared),OK
-R1,10k 0603 1% (YAGEO RC0603FR-0710KL),10k,0603,0,BUY 10k 0603 1% (Yageo RC0603FR-0710KL); cart has 5% RC0603JR - replace
+R1,10k 0603 5% (YAGEO RC0603JR-0710KL),10k,0603,0,BUY 10k 0603 5% (Yageo RC0603JR-0710KL); in cart (qty 110)
 R2-R4,4.7k 0805,4.7k (changed),0805,(4.7k 0805 pack),OK
 R5,4.7k 0805 (from bought pack),4.7k,0603 - change to 0805,(4.7k 0805 pack),PENDING footprint change 0603->0805; use bought 4.7k 0805 pack
 R6-R8,1k 1206 (from bought pack),1k,0603 - change to 1206,(1k 1206 pack),PENDING footprint change 0603->1206; use bought 1k 1206 pack
 R9-R12,100R 1206 (spec) - board 1206,100R (changed),1206,(100R 0805 pack bought),footprint change to 0805 pending (bought 0805)
-R13-R19,10k 0603 1% (YAGEO RC0603FR-0710KL),10k,0603,0,"BUY 10k 0603 1% (Yageo RC0603FR-0710KL), 7 pieces"
+R13-R19,10k 0603 5% (YAGEO RC0603JR-0710KL),10k,0603,0,"BUY 10k 0603 5% (Yageo RC0603JR-0710KL), 7 pieces"
 R21-R24,0R,0R (changed),0603,0,solder-bridge option (no purchase needed)
 R25,4.7k 0805 (from bought pack),4.7k,0603 - change to 0805,(4.7k 0805 pack),PENDING footprint change 0603->0805; use bought 4.7k 0805 pack
-R26,10k 0603 1% (YAGEO RC0603FR-0710KL),10k,0603,0,BUY 10k 0603 1% (Yageo RC0603FR-0710KL)
+R26,10k 0603 5% (YAGEO RC0603JR-0710KL),10k,0603,0,BUY 10k 0603 5% (Yageo RC0603JR-0710KL)
 R27-R30,470R 0805,470R (changed),0805,(470R 0805 pack),OK
 R31,1k 1206,1k (changed),1206,1 (1k 1206 pack),OK
-R32,10k 0603 1% (YAGEO RC0603FR-0710KL),10k,0603,0,BUY 10k 0603 1% (Yageo RC0603FR-0710KL)
+R32,10k 0603 5% (YAGEO RC0603JR-0710KL),10k,0603,0,BUY 10k 0603 5% (Yageo RC0603JR-0710KL)
 R33,1k 1206,1k (changed),1206,(1k 1206 pack),OK
 R34,1k 1206,1k (changed),1206,(1k 1206 pack),OK
 R36,5.1k 0805,5.1k (changed),0805,(5.1k 0805 pack),OK
@@ -65,7 +65,7 @@ R43,100k 0603,100k (changed),0603,(shared),OK
 R44,not in spec,R44 (no value),0603,-,UNDECIDED
 R45,not in spec,100k,0603,(shared),UNDECIDED (not in spec)
 R46,33k 1206,33k (changed),1206,(shared),OK
-R47,"10k 0603 1% (YAGEO RC0603FR-0710KL, 1%)",10k,1206 - change to 0603,0,BUY 10k 0603 1% (Yageo RC0603FR-0710KL); PENDING footprint change 1206->0603
+R47,"10k 0603 1% (YAGEO RC0603JR-0710KL, 5%)",10k,1206 - change to 0603,0,BUY 10k 0603 5% (Yageo RC0603JR-0710KL); footprint change 1206->0603
 R48,AP62300 EN divider (value not given in spec),100k,0603,(shared),UNDECIDED
 R49,AP62300 EN divider (value not given in spec),33k,1206,(shared),UNDECIDED
 J1,"Standard 2.54 mm straight male pin header, 1x10 (most available). Footprint unchanged.",JTAG,2.54mm 1x10,0,USER HAS (not in screenshots) - confirm
