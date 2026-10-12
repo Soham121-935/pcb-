@@ -1,7 +1,7 @@
 # SV16 rebuild - step 1 (value-level only)
 
 - `SBSV-16_rebuild_step1_values.kicad_pcb`: copy of the uploaded `SBSV-16.kicad_pcb`
-  with 46 `Value` fields changed (Q2/Q4 -> MMBT3904/3906, C36/C37 -> 22pF,
+  with 37 `Value` fields changed (9 listed values already matched and were left as is) (Q2/Q4 -> MMBT3904/3906, C36/C37 -> 22pF,
   resistor values from the spec). Components, footprints, tracks, vias and zones
   are unchanged (141 footprints, 1783 segments, 179 vias).
 - `BOM_rebuild_step1.csv`: parts list with bought/needed status.
