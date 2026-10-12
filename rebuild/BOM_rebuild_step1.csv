@@ -1,0 +1,85 @@
+Ref,Spec part,Board value (step1),Footprint (board),Bought (cart),Status
+U1,LFE5U-12F-6TG144C,LFE5U-12F-6TG144C,LQFP-144,0,BUY (FPGA)
+U2,W25Q64JVSSIQ,W25Q64JVSSIQ,SOIC-8 5.3x6.2,1,OK (have 1 of 1)
+U3,W25Q64JVSSIQ,W25Q64JVSSIQ,SOIC-8 5.3x6.2,1,BUY 1 more (need 2 total)
+Y1,Active 25 MHz XO 3.2x2.5 4-pad (YIC OSC25M-3.3I/S3-25T),25 MHz ACTIVE XO,ASE-4Pin 3.2x2.5,0 active (3 passive 25 MHz HC49/US crystals bought - NOT usable here),BUY active XO
+Y2,"12 MHz crystal HC49/U surface mount (passive 2-pin, OK for CH340G)",12 MHz,HC49-4H (THT) - change to SMD HC49/US,0,BUY 12 MHz SMD crystal; PENDING footprint change to SMD HC49
+U4,CH340G,CH340G,SOIC-16,1,OK
+U5,AP62300TWU-7,AP62300TWU-7,SOT-23-6,1,OK
+U6,MP1584EN,MP1584EN,SOIC-8-1EP,1,OK
+U7,LP5907MFX-2.5,LP5907MFX-2.5,SOT-23-5,1,OK
+U8,USBLC6-2SC6,USBLC6-2SC6,SOT-23-6,4,OK
+Q1,2N7002,2N7002,SOT-23,7,OK
+Q2,MMBT3904,MMBT3904 (changed),SOT-23,9,OK
+Q4,MMBT3906,MMBT3906 (changed),SOT-23,13,OK
+D1-D5,LED green 0603,LED green,0603,7,OK
+D6,LED red 0603 (DNP by default per spec),LED red,0603,6,OK - mark DNP on board (not done yet)
+D7,LED red 0603,LED red,0603,6,OK
+D8,SS34,SS34,SMA,2,BUY 1 more (need 3 total with D9/D11)
+D9,SS34,SS34,SMA,2,(see D8)
+D11,SS34 (1V1 catch diode),SS34,SMA,2,(see D8)
+L1,10 uH CD54 >=1.5A,10 uH,SWPA6045S footprint (spec: MWSA0518) - footprint NOT changed,2 (CD54 10uH),OK value; footprint change pending
+L2,10 uH CD54 >=1.5A,10 uH,SWPA6045S footprint (spec: MWSA0518) - footprint NOT changed,2 (CD54 10uH),OK value; footprint change pending
+FB1,600R @100MHz 0603,600R @100MHz,0603,0,NOT BOUGHT (solder-bridge option, or buy)
+C21,100uF 25V D-case tant,100uF 25V tant,CP_EIA-7343-31,1,OK
+C22,22uF 63V electrolytic,22uF 63V electrolytic,CP_Elec_6.3x5.4,22,OK
+C23,470uF 16V electrolytic,470uF 16V,CP_Elec_8x10.5,11,OK
+C24,220uF 25V hybrid,220uF 25V hybrid,CP_Elec_8x10.5,11,OK
+C25,10uF 0805 ceramic (spec) -> 10uF 35V electrolytic (decision),10uF,C_0805 - footprint NOT changed,11 (10uF 35V electrolytic),footprint change pending (CP_Elec_4x5.4)
+C30,10uF 0805 ceramic (spec) -> 10uF 35V electrolytic (decision),10uF,C_0805 - footprint NOT changed,11,footprint change pending
+C39,10uF electrolytic (decision),10uF 35V electrolytic,CP_Elec_4x5.4,11,OK
+C40,22uF electrolytic (decision),22uF 63V electrolytic,CP_Elec_6.3x5.4,22,OK
+C41,22uF electrolytic (decision),22uF 63V electrolytic,CP_Elec_6.3x5.4,22,OK
+C42,10uF electrolytic (decision),10uF 35V electrolytic,CP_Elec_4x5.4,11,OK
+C32,470nF 0603 (spec),470nF,C_0805 - footprint NOT changed,20 (470nF 0603),footprint change pending (0603)
+C34,not in spec,100nF,0603,40,UNDECIDED (remove or leave)
+C35,not in spec,100pF,0603,0,UNDECIDED (remove or leave)
+C36,22pF C0G 0805 50V 5% (YAGEO CC0805JRNPO9BN220),22pF,0603 - change to 0805,0,BUY 22 pF 0805 C0G; PENDING footprint change 0603->0805
+C37,22pF C0G 0805 50V 5% (YAGEO CC0805JRNPO9BN220),22pF,0603 - change to 0805,0,BUY (see C36); PENDING footprint change 0603->0805
+C1-C20,100nF 0603,100nF,0603,40 (shared),OK
+C26-C29,100nF 0603,100nF,0603,(shared),OK
+C31,470nF 0603,470nF,0603,(shared),OK
+C33,100nF 0603,100nF,0603,(shared),OK
+C38,100nF 0603,100nF,0603,(shared),OK
+R1,10k 0603 5% (YAGEO RC0603JR-0710KL),10k,0603,0,BUY 10k 0603 (Yageo RC0603JR-0710KL)
+R2-R4,4.7k 0805,4.7k (changed),0805,(4.7k 0805 pack),OK
+R5,4.7k 0805 (from bought pack),4.7k,0603 - change to 0805,(4.7k 0805 pack),PENDING footprint change 0603->0805; use bought 4.7k 0805 pack
+R6-R8,1k 1206 (from bought pack),1k,0603 - change to 1206,(1k 1206 pack),PENDING footprint change 0603->1206; use bought 1k 1206 pack
+R9-R12,100R 1206 (spec) - board 1206,100R (changed),1206,(100R 0805 pack bought),footprint change to 0805 pending (bought 0805)
+R13-R19,10k 0603 5% (YAGEO RC0603JR-0710KL),10k,0603,0,"BUY 10k 0603 (Yageo RC0603JR-0710KL), 7 pieces"
+R21-R24,0R,0R (changed),0603,0,solder-bridge option (no purchase needed)
+R25,4.7k 0805 (from bought pack),4.7k,0603 - change to 0805,(4.7k 0805 pack),PENDING footprint change 0603->0805; use bought 4.7k 0805 pack
+R26,10k 0603 5% (YAGEO RC0603JR-0710KL),10k,0603,0,BUY 10k 0603 (Yageo RC0603JR-0710KL)
+R27-R30,470R 0805,470R (changed),0805,(470R 0805 pack),OK
+R31,1k 1206,1k (changed),1206,1 (1k 1206 pack),OK
+R32,10k 0603 5% (YAGEO RC0603JR-0710KL),10k,0603,0,BUY 10k 0603 (Yageo RC0603JR-0710KL)
+R33,1k 1206,1k (changed),1206,(1k 1206 pack),OK
+R34,1k 1206,1k (changed),1206,(1k 1206 pack),OK
+R36,5.1k 0805,5.1k (changed),0805,(5.1k 0805 pack),OK
+R37,5.1k 0805,5.1k (changed),0805,(5.1k 0805 pack),OK
+R38,12.4k 0402,12.4k (changed),0402,30,OK
+R39,33k 1206,33k (changed),1206,(33k 1206 pack),OK
+R40,100k 0603,100k (changed),0603,11 (thin film),OK
+R41,100k 0603,100k (changed),0603,(shared),OK
+R43,100k 0603,100k (changed),0603,(shared),OK
+R44,not in spec,R44 (no value),0603,-,UNDECIDED
+R45,not in spec,100k,0603,(shared),UNDECIDED (not in spec)
+R46,33k 1206,33k (changed),1206,(shared),OK
+R47,"10k 0603 1% (YAGEO RC0603FR-0710KL, 1%)",10k,1206 - change to 0603,0,BUY 10k 0603 1% (Yageo RC0603FR-0710KL); PENDING footprint change 1206->0603
+R48,AP62300 EN divider (value not given in spec),100k,0603,(shared),UNDECIDED
+R49,AP62300 EN divider (value not given in spec),33k,1206,(shared),UNDECIDED
+J1,JTAG 1x10 header,JTAG,2.54mm 1x10,0,BUY (user)
+J2,JTAG 2x5 1.27mm (optional),JTAG-1.27,1.27mm 2x5,0,OPTIONAL
+J3,EXP-A 2x10,EXP-A,2.54mm 2x10,0,BUY (user)
+J4,EXP-B 2x10,EXP-B,2.54mm 2x10,0,BUY (user)
+J5,EXP-C 1x10,EXP-C,2.54mm 1x10,0,BUY (user)
+J6,MOTOR 1x6 keyed,MOTOR,2.54mm 1x6,0,BUY (user)
+J7,SPARE 2x25 footprint only,absent,-,0,ADD footprint (not fitted)
+J8,USB-C 16-pin HRO,USB-C,HRO TYPE-C-31-M-12,4,OK
+J9,Barrel jack 5.5/2.1,7-12 V,CUI PJ-102AH,0,BUY (user)
+J10,CONSOLE 1x4,CONSOLE,2.54mm 1x4,0,BUY (user)
+JP1,2-pin + shunt,DTR ENABLE,1x02,0,BUY (user)
+SW1,6x6 tact,RESET,SW_PUSH_6mm,0,BUY (user)
+SW2,6x6 tact,RECONFIG,SW_PUSH_6mm,0,BUY (user)
+TP1-TP6,1 mm pads,OK,TestPoint,-,OK
+H1-H4,M3 mount holes,OK,-,-,OK
