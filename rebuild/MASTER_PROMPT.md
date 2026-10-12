@@ -99,6 +99,7 @@ For each row, verify the KiCad library name exists in your local footprint libra
 | R11 | Resistor_SMD:R_1206_3216Metric | Resistor_SMD:R_0805_2012Metric | same |
 | R12 | Resistor_SMD:R_1206_3216Metric | Resistor_SMD:R_0805_2012Metric | same |
 | R47 | Resistor_SMD:R_1206_3216Metric | Resistor_SMD:R_0603_1608Metric | 10k 1% 0603 (to buy, Yageo RC0603FR-0710KL) |
+| FB1 | Inductor_SMD:L_0603_1608Metric (or the 0603 ferrite footprint) | Inductor_SMD:L_0805_2012Metric | 600R ferrite 0805 (TDK MPZ2012S601ATD25, in cart, qty 2) |
 | Y2 | Crystal:Crystal_HC49-4H_Vertical | Crystal:Crystal_SMD_HC49-SD (verify; or the footprint of the bought SMD HC49/U 12 MHz crystal) | SMD 12 MHz crystal (to buy) |
 | L1 | Inductor_SMD:L_Sunlord_SWPA6045S | Inductor_SMD:L_Sunlord_MWSA0518_5.4x5.2mm (verify pads against the bought CD54 datasheet) | spec footprint |
 | L2 | Inductor_SMD:L_Sunlord_SWPA6045S | Inductor_SMD:L_Sunlord_MWSA0518_5.4x5.2mm (same as L1) | spec footprint |
@@ -109,7 +110,7 @@ For each row, verify the KiCad library name exists in your local footprint libra
 
 Footprints that are ALREADY correct (do not change): C21 (CP_EIA-7343-31 tantalum), C22 (CP_Elec_6.3x5.4), C23 (CP_Elec_8x10.5), C24 (CP_Elec_8x10.5), C39 (CP_Elec_4x5.4), C40 and C41 (CP_Elec_6.3x5.4), C42 (CP_Elec_4x5.4). R1 and the other 10k 0603 resistors. R2 to R4, R27 to R30, R36, R37 (0805). R31, R33, R34, R39, R46, R49 (1206). R38 (0402). R40, R41, R43, R44, R45, R48 (0603). J8 USB-C HRO TYPE-C-31-M-12. J9 barrel jack. D8, D9, D11 (SMA). Headers J1, J3 to J6, J10 (2.54 mm).
 
-FB1 (600R ferrite, 0603): keep the 0603 footprint and its value. No ferrite is bought yet; mark it in REPORT.md as "not yet in hand" and keep the net connections.
+FB1 (600R ferrite): change the footprint to 0805 (Inductor_SMD:L_0805_2012Metric) and set the value to 600R @100MHz. The bought part is TDK MPZ2012S601ATD25 (0805). Keep the net connections.
 
 ### 3.3 Other changes
 
@@ -128,7 +129,7 @@ FB1 (600R ferrite, 0603): keep the 0603 footprint and its value. No ferrite is b
 - Y1 YIC OSC25M-3.3I/S3-25T (active, 4-SMD 3.2x2.5 mm, not yet in hand)
 - Y2 12 MHz SMD crystal (not bought)
 - D8, D9, D11: third SS34 (2 of 3 bought)
-- 10k 0603 resistors: 11 pieces (Yageo RC0603JR-0710KL). R47 10k 0603 1% (Yageo RC0603FR-0710KL).
+- 10k 0603 1% resistors: 12 pieces (Yageo RC0603FR-0710KL): R1, R13-R19, R26, R32 and R47. The user uses 1% parts only.
 - 22 pF 0805 C0G caps: 2 pieces (Yageo CC0805JRNPO9BN220).
 - Barrel jack J9, SW1, SW2, JP1 shunt, headers: the user says they already have these; confirm the footprints match.
 
@@ -223,7 +224,7 @@ Step 9. Write REPORT.md (section 8) and save the board as `sv16_board_netted.kic
 5. Net check. Each net-name default applied. Every difference found against the schematic or section 4.
 6. Planes and stackup. What was set, and whether any zone was filled.
 7. Parts not in hand (section 3.4).
-8. Open decisions for the user: USB and 5 V net names (defaults applied), C39 to C42 (electrolytic applied), R44, R45, R48, R49, C34, C35 (undecided), U6 COMP RC values (not in spec), C23 16 V on 12 V (derating kept), FB1 not in hand, J6 keying.
+8. Open decisions for the user: USB and 5 V net names (defaults applied), C39 to C42 (electrolytic applied), R44, R45, R48, R49, C34, C35 (undecided), U6 COMP RC values (not in spec), C23 16 V on 12 V (derating kept), FB1 0805 footprint change (part in cart), J6 keying.
 9. Final counts: footprints, tracks (must be 0), vias (must be 0), nets, unconnected (expected to be high; report the number).
 10. File list with paths.
 

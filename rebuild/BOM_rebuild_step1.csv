@@ -20,7 +20,7 @@ D9,SS34,SS34,SMA,2,(see D8)
 D11,SS34 (1V1 catch diode),SS34,SMA,2,(see D8)
 L1,10 uH CD54 >=1.5A,10 uH,SWPA6045S footprint (spec: MWSA0518) - footprint NOT changed,2 (CD54 10uH),OK value; footprint change pending
 L2,10 uH CD54 >=1.5A,10 uH,SWPA6045S footprint (spec: MWSA0518) - footprint NOT changed,2 (CD54 10uH),OK value; footprint change pending
-FB1,600R @100MHz 0603,600R @100MHz,0603,0,NOT BOUGHT (solder-bridge option, or buy)
+FB1,600R @100MHz 0805 (MPZ2012S601ATD25),600R @100MHz,0805,2,IN CART (TDK MPZ2012S601ATD25, qty 2); footprint change 0603->0805
 C21,100uF 25V D-case tant,100uF 25V tant,CP_EIA-7343-31,1,OK
 C22,22uF 63V electrolytic,22uF 63V electrolytic,CP_Elec_6.3x5.4,22,OK
 C23,470uF 16V electrolytic,470uF 16V,CP_Elec_8x10.5,11,OK
@@ -41,18 +41,18 @@ C26-C29,100nF 0603,100nF,0603,(shared),OK
 C31,470nF 0603,470nF,0603,(shared),OK
 C33,100nF 0603,100nF,0603,(shared),OK
 C38,100nF 0603,100nF,0603,(shared),OK
-R1,10k 0603 5% (YAGEO RC0603JR-0710KL),10k,0603,0,BUY 10k 0603 (Yageo RC0603JR-0710KL)
+R1,10k 0603 1% (YAGEO RC0603FR-0710KL),10k,0603,0,BUY 10k 0603 1% (Yageo RC0603FR-0710KL); cart has 5% RC0603JR - replace
 R2-R4,4.7k 0805,4.7k (changed),0805,(4.7k 0805 pack),OK
 R5,4.7k 0805 (from bought pack),4.7k,0603 - change to 0805,(4.7k 0805 pack),PENDING footprint change 0603->0805; use bought 4.7k 0805 pack
 R6-R8,1k 1206 (from bought pack),1k,0603 - change to 1206,(1k 1206 pack),PENDING footprint change 0603->1206; use bought 1k 1206 pack
 R9-R12,100R 1206 (spec) - board 1206,100R (changed),1206,(100R 0805 pack bought),footprint change to 0805 pending (bought 0805)
-R13-R19,10k 0603 5% (YAGEO RC0603JR-0710KL),10k,0603,0,"BUY 10k 0603 (Yageo RC0603JR-0710KL), 7 pieces"
+R13-R19,10k 0603 1% (YAGEO RC0603FR-0710KL),10k,0603,0,"BUY 10k 0603 1% (Yageo RC0603FR-0710KL), 7 pieces"
 R21-R24,0R,0R (changed),0603,0,solder-bridge option (no purchase needed)
 R25,4.7k 0805 (from bought pack),4.7k,0603 - change to 0805,(4.7k 0805 pack),PENDING footprint change 0603->0805; use bought 4.7k 0805 pack
-R26,10k 0603 5% (YAGEO RC0603JR-0710KL),10k,0603,0,BUY 10k 0603 (Yageo RC0603JR-0710KL)
+R26,10k 0603 1% (YAGEO RC0603FR-0710KL),10k,0603,0,BUY 10k 0603 1% (Yageo RC0603FR-0710KL)
 R27-R30,470R 0805,470R (changed),0805,(470R 0805 pack),OK
 R31,1k 1206,1k (changed),1206,1 (1k 1206 pack),OK
-R32,10k 0603 5% (YAGEO RC0603JR-0710KL),10k,0603,0,BUY 10k 0603 (Yageo RC0603JR-0710KL)
+R32,10k 0603 1% (YAGEO RC0603FR-0710KL),10k,0603,0,BUY 10k 0603 1% (Yageo RC0603FR-0710KL)
 R33,1k 1206,1k (changed),1206,(1k 1206 pack),OK
 R34,1k 1206,1k (changed),1206,(1k 1206 pack),OK
 R36,5.1k 0805,5.1k (changed),0805,(5.1k 0805 pack),OK
