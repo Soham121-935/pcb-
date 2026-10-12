@@ -1,5 +1,7 @@
 # MASTER PROMPT: SV16 board. Make a netted, footprint-based KiCad PCB (NO ROUTING)
 
+WORKING FOLDER: this `rebuild/` folder is the ONLY folder you have. Every input and every output lives in it. Do not look for files outside it. Relative paths in this prompt are relative to this folder.
+
 You are an autonomous PCB agent working in a local folder that contains the SV16 board files. Your job is to take an UNROUTED KiCad PCB and produce a NETTED, FOOTPRINT-BASED board file: every footprint is the final one, every value is set, every pad is assigned to its net, the layer stack and planes are defined, and the board has NO tracks and NO vias. The board must show the full ratsnest (every net unrouted). Do NOT route anything. Do NOT generate release files.
 
 You have no human to ask during the run. When a decision is not in this document, use the default given here, record it in REPORT.md, and continue. Always finish by writing REPORT.md.
@@ -28,17 +30,13 @@ Expected result: the board shows 0 tracks, 0 vias, and all nets as ratsnest line
 
 ---
 
-## 1. Files you must read (all in the local folder)
+## 1. Files you must read (all in this folder)
 
-1. `<UNROUTED_FILE>`: the UNROUTED KiCad PCB the user added. This is your starting board. Its name is not yet fixed. Find it as the `.kicad_pcb` file that is NOT one of these:
-   - `sv16_board_placed_native.kicad_pcb` (old placement board, do not use as the base)
-   - `sv16_board_routed_draft.kicad_pcb` (old DRAFT routing, do NOT use, do NOT copy from it)
-   - `rebuild/SBSV-16_rebuild_step1_values.kicad_pcb` (value-only reference copy, see section 3.1)
-   If more than one candidate exists, pick the one with 0 tracks and 0 vias. State your choice in REPORT.md.
-2. `rebuild/SV16_TODO_rebuild_step1.pdf`: the checklist. Use sections A (footprints), B (open values), C (values set), D (schematic checks), E (purchases) as reference. Ignore section F (routing) for this task.
-3. `rebuild/BOM_rebuild_step1.csv` (and the PDF `rebuild/SV16_BOM_rebuild_step1.pdf`): part list, values and footprints with bought/needed status.
-4. `PCB_COMPONENTS.pdf` (spec, 19 pages): source for values, pinouts and net names. Section 3 = component list. Section 4 = pin-level connections. Section 10 = corrections you must respect.
-5. The schematic (`*.kicad_sch`), if it is in the folder. It is the source of truth for net names and pin connections. If it is absent, record that in REPORT.md. Do not invent a netlist.
+1. `<UNROUTED_FILE>`: the UNROUTED KiCad PCB the user placed in this folder. This is your starting board. Its name is not fixed. Find it as the `.kicad_pcb` file in this folder that is NOT `SBSV-16_rebuild_step1_values.kicad_pcb` and NOT `sv16_board_netted.kicad_pcb` (the output). If there is no such file, STOP, write REPORT.md saying the unrouted board is missing, and do not invent a board. If more than one candidate exists, pick the one with 0 tracks and 0 vias. State your choice in REPORT.md.
+2. `SV16_TODO_rebuild_step1.pdf`: the checklist. Use sections A (footprints), B (open values), C (values set), D (schematic checks), E (purchases) as reference. Ignore section F (routing) for this task.
+3. `BOM_rebuild_step1.csv` (and the PDF `SV16_BOM_rebuild_step1.pdf`): part list, values and footprints with bought/needed status.
+4. `PCB_COMPONENTS.pdf` (spec, 19 pages, in this folder): source for values, pinouts and net names. Section 3 = component list. Section 4 = pin-level connections. Section 10 = corrections you must respect.
+5. The schematic (`*.kicad_sch`), if it is in this folder. It is not expected here; if it is absent, say so. It is the source of truth for net names and pin connections. If it is absent, record that in REPORT.md. Do not invent a netlist.
 
 ---
 
@@ -61,7 +59,7 @@ Expected result: the board shows 0 tracks, 0 vias, and all nets as ratsnest line
 
 ### 3.1 Starting-point facts
 
-`rebuild/SBSV-16_rebuild_step1_values.kicad_pcb` is a copy of the uploaded board with 37 Value fields changed. It has 141 footprints at the original positions, 119 nets, and the old 1,783 tracks and 179 vias. Use it as a reference for values. The 37 changed values are:
+`SBSV-16_rebuild_step1_values.kicad_pcb` (this folder) is a copy of the uploaded board with 37 Value fields changed. It has 141 footprints at the original positions, 119 nets, and the old 1,783 tracks and 179 vias. Use it as a reference for values. The 37 changed values are:
 
 - Q2: BC817 -> MMBT3904 (SOT-23)
 - Q4: BC807 -> MMBT3906 (SOT-23)
@@ -194,7 +192,7 @@ Count the nets you actually find. If the number differs from the list above, rep
 
 ## 7. Steps (log each step in WORKLOG.md)
 
-Step 0. Create `agent_work/` in the local folder. Create `WORKLOG.md`. Back up the original unrouted file to `agent_work/backup_<UNROUTED_FILE>` before you change anything.
+Step 0. Create `agent_work/` in this folder. Create `WORKLOG.md`. Back up the original unrouted file to `agent_work/backup_<UNROUTED_FILE>` before you change anything.
 
 Step 1. Identify `<UNROUTED_FILE>` (section 1). Record counts in WORKLOG.md: footprints, tracks, vias, zones, nets, layers, Edge.Cuts shape.
 
