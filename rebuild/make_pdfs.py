@@ -59,10 +59,10 @@ todo=[
  ]),
  ('B. Value decisions still open (you decide, then set the value in KiCad)', [
   'R44: no value in spec or board. Leave unset and report it.',
-  'R45: 100k on board, not in spec. Keep the board value, purpose unverified.',
+  'R45: 100k on board, not in spec. Probably unnecessary. Remove unless the schematic shows a use.',
   'R48, R49: AP62300 EN divider from VM_IN. Keep board values 100k (R48) and 33k (R49). At 12 V EN = 2.98 V, under the spec 6 V EN pin limit. The AP62300 enable threshold is not in the spec: check it against the datasheet.',
-  'C34: 100 nF on board, not in spec. Keep the board value, purpose unverified.',
-  'C35: 100 pF on board, not in spec. Keep the board value, purpose unverified.',
+  'C34: 100 nF on board, not in spec. Probably unnecessary. Remove unless the schematic shows a use.',
+  'C35: 100 pF on board, not in spec. Probably unnecessary. Remove unless the schematic shows a use.',
  ]),
  ('C. Values already changed in the step-1 copy (verify in KiCad)', [
   'Q2: BC817 changed to MMBT3904. Q4: BC807 changed to MMBT3906 (SOT-23, same pinout per spec).',
@@ -89,7 +89,7 @@ todo=[
   '10k 0603 5% resistor: YAGEO RC0603JR-0710KL, 1 piece for R47 (12 in total with the 11 above). Covered by the cart line. The user uses 5% parts only.',
   '22 pF 0805 C0G caps: YAGEO CC0805JRNPO9BN220 (22 pF, 50 V, 0805, 5%), 2 pieces (C36, C37). To buy.',
   '4.7k (R5, R25) and 1k (R6-R8): use the 0805 and 1206 packs you already bought, with the footprint changes in section A. No purchase needed.',
-  'Headers: use the most available part, standard 2.54 mm straight male pin headers (1x10, 2x10, 1x6, 1x4, 1x2). Footprints on the board already match, so no change. J2 (1.27 mm 2x5) left unpopulated per spec. J6 keyed: use a shrouded keyed 1x6 header.',
+  'Headers: use the most available part, standard 2.54 mm straight male pin headers (1x10, 2x10, 1x6, 1x4, 1x2). Footprints on the board already match, so no change. J2 (1.27 mm 2x5) left unpopulated per spec. J6 is the exception: use a shrouded, keyed 1x6 header (not a standard one).',
   'Connectors and switches (barrel jack J9, SW1/SW2, JP1 shunt): you already have these. Not in the cart screenshots, so confirm the parts and footprints match the board.',
  ]),
  ('G. Agent handoff (for whoever makes the PCB changes)', [
@@ -101,7 +101,7 @@ todo=[
   'G5 Strip the old routing first: the uploaded file still has 1,783 tracks and 179 vias from the old routing. Delete all tracks and vias in KiCad (select all, filter to tracks and vias, delete). Keep every footprint in place. Do not merge or copy old routing (routing_state.json, routing.kicad_pcb.txt, sv16_board_working.kicad_pcb). Confirm the board then shows 0 tracks and 0 vias and all nets unconnected.',
   'G6 Acceptance: after routing, DRC shows 0 unconnected, 0 shorts, 0 clearance, 0 edge and courtyard errors. Zones filled. Only then generate Gerber, drill, BOM and position files.',
  ]),
- ('F. Routing and checks (after A-D are done)', [
+ ('F. Routing and checks (later step, not part of this netted board)', [
   'Re-route the board from the updated placement. Tracks in this file are not verified.',
   'Run DRC: 0 unconnected, 0 shorts, 0 clearance, 0 edge or courtyard errors. Zones filled.',
   'Only after clean DRC: generate Gerber, drill, BOM and position files.',
