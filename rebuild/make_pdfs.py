@@ -60,7 +60,7 @@ todo=[
  ('B. Value decisions still open (you decide, then set the value in KiCad)', [
   'R44: no value in spec or board. Leave unset and report it.',
   'R45: 100k on board, not in spec. Keep the board value, purpose unverified.',
-  'R48, R49: AP62300 EN divider from VM_IN. Keep board values 100k (R48) and 33k (R49), and report them as unverified against the AP62300 datasheet.',
+  'R48, R49: AP62300 EN divider from VM_IN. Keep board values 100k (R48) and 33k (R49). At 12 V EN = 2.98 V, under the spec 6 V EN pin limit. The AP62300 enable threshold is not in the spec: check it against the datasheet.',
   'C34: 100 nF on board, not in spec. Keep the board value, purpose unverified.',
   'C35: 100 pF on board, not in spec. Keep the board value, purpose unverified.',
  ]),
@@ -72,7 +72,7 @@ todo=[
  ]),
  ('D. Schematic / design checks from the spec (must be fixed in the schematic)', [
   'U5 (AP62300) pin 4 (FB) must be connected to 3V3. Spec says the earlier sheet left it floating.',
-  'U6 (MP1584): COMP RC network has no values in spec or board. Leave unset and report the inputs needed (L2 value, output capacitor, 1V1 target).',
+  'U6 (MP1584): COMP RC network has no values in spec or board. Inputs are in spec: L2 10 uH, C21 100 uF tantalum, 1V1 from R38/R39 (1.10 V). Calculate Rc/Cc from the MP1584EN datasheet, mark as calculated, or leave unset and report.',
   'U6 feedback divider: R38 = 12.4k top, R39 = 33k bottom (already set). Keep R39 below 40k.',
   'C23: change to 470 uF 25 V electrolytic (same CP_Elec_8x10.5 footprint). 16 V on 12 V is 75% of rated, too close to the limit.',
   'Oscillator Y1 (ECS-3225MV-250): pin 1 Tri-state (high or NC = active), pin 2 GND, pin 3 OUT, pin 4 VDD. Confirm the pad footprint against the ECS land pattern.',

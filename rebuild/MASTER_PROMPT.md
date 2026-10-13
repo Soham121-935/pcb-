@@ -120,7 +120,7 @@ FB1 (600R ferrite): change the footprint to 0805 (Inductor_SMD:L_0805_2012Metric
 - J6 (MOTOR, keyed): use a shrouded, keyed 1x6 2.54 mm header (the shroud key stops reversed insertion). Keep the 1x6 footprint. Record in REPORT.md.
 - J3: move back to its original position (x 194.65 mm, y 120.24 mm, as in the source board). Do not move any other component.
 - G*** logo footprint: leave it removed and record that in REPORT.md.
-- Values kept from the board, not in spec. Keep them and report their purpose as unverified: R45 (100k), R48 (100k, EN divider top), R49 (33k, EN divider bottom), C34 (100 nF), C35 (100 pF). R44: no value anywhere, leave it unset and report it. U6 COMP RC network: no values in the spec or the board, leave it unset and report the inputs needed (L2 value, output capacitor value and type, 1V1 target).
+- Values kept from the board, not in spec. Keep them and report their purpose as unverified: R45 (100k), R48 (100k, EN divider top), R49 (33k, EN divider bottom), C34 (100 nF), C35 (100 pF). R44: no value anywhere, leave it unset and report it. U6 COMP RC network: no values in the spec or the board. The inputs are in the spec: L2 = 10 uH (section 3.4), output bulk C21 = 100 uF tantalum plus 100 nF, and the 1V1 target from R38 12.4k / R39 33k (0.8 x (1 + 12.4/33) = 1.10 V). Compute Rc and Cc from the MP1584EN datasheet compensation method and mark them as calculated, not verified. If you cannot do this, leave them unset and report it.
 - C39, C40, C41, C42 stay ELECTROLYTIC (user decision). Do not change to ceramic.
 - C23: change to 470 uF 25 V electrolytic, same CP_Elec_8x10.5 footprint. Reason: 16 V on a 12 V input is 75% of rated voltage, too close to the limit for an electrolytic. 25 V gives about 48%. Report the change.
 
