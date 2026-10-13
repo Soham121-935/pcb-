@@ -120,7 +120,7 @@ FB1 (600R ferrite): change the footprint to 0805 (Inductor_SMD:L_0805_2012Metric
 - J6 (MOTOR, keyed): use a shrouded, keyed 1x6 2.54 mm header (the shroud key stops reversed insertion). Keep the 1x6 footprint. Record in REPORT.md.
 - J3: move back to its original position (x 194.65 mm, y 120.24 mm, as in the source board). Do not move any other component.
 - G*** logo footprint: leave it removed and record that in REPORT.md.
-- Values kept from the board, not in spec. Keep them and report their purpose as unverified: R45 (100k), R48 (100k, EN divider top), R49 (33k, EN divider bottom), C34 (100 nF), C35 (100 pF). R44: no value anywhere, leave it unset and report it. U6 COMP RC network: no values in the spec or the board. The inputs are in the spec: L2 = 10 uH (section 3.4), output bulk C21 = 100 uF tantalum plus 100 nF, and the 1V1 target from R38 12.4k / R39 33k (0.8 x (1 + 12.4/33) = 1.10 V). Compute Rc and Cc from the MP1584EN datasheet compensation method and mark them as calculated, not verified. If you cannot do this, leave them unset and report it.
+- Values kept from the board, not in spec. Keep them and report their purpose as unverified: R45 (100k), R48 (100k, EN divider top), R49 (33k, EN divider bottom), C34 (100 nF), C35 (100 pF). R44: no value anywhere, leave it unset and report it. U6 COMP RC network: R3 = 150 kohm in series with C3 = 100 pF to GND on COMP (pin 3), calculated from the MP1584EN datasheet method (fsw 900 kHz from R40 100k, fc 90 kHz, C2 100 uF, Vout 1.1 V). C6 is needed if the output ESR zero is below fsw/2 (likely with C21 tantalum); its value is not calculated, so confirm the output ESR and the datasheet C6 equation before fitting.
 - C39, C40, C41, C42 stay ELECTROLYTIC (user decision). Do not change to ceramic.
 - C23: change to 470 uF 25 V electrolytic, same CP_Elec_8x10.5 footprint. Reason: 16 V on a 12 V input is 75% of rated voltage, too close to the limit for an electrolytic. 25 V gives about 48%. Report the change.
 
@@ -160,8 +160,8 @@ Key connections (check these pads):
 - pwm_out, motor_dir1, motor_dir2, motor_fault_n (pins 88, 89, 102, 103): J6 pins 3 to 6.
 
 Power and regulators:
-- U5 AP62300TWU-7 (SOT-23-6): VIN from VM_IN, SW to L1 (10 uH) to 3V3. FB pin must be on net 3V3 (spec correction 1). Connect `U5_FB` to 3V3 as the spec says, and report the change. R46 (33k) and R47 (10k) feedback divider. R48 and R49: EN divider from VM_IN (values UNDECIDED). C38 100 nF on BST.
-- U6 MP1584EN-LF-Z (SOIC-8, exposed pad = GND): output 1V1 via L2 (10 uH). Catch diode D11 (SS34). R38 (12.4k) top, R39 (33k) bottom. R40 (100k) FREQ to GND. R41 (100k) and C31 (470 nF) EN delay. C33 100 nF BST. COMP RC network: the net `U6_COMP_RC` exists. Values are not in the spec or the board: leave unset and report the inputs needed.
+- U5 AP62300TWU-7 (SOT-23-6): VIN from VM_IN, SW to L1 (10 uH) to 3V3. FB pin must be on net 3V3 (spec correction 1). Connect `U5_FB` to 3V3 as the spec says, and report the change. R46 (33k) and R47 (10k) feedback divider. R48 and R49: EN divider from VM_IN (board values 100k and 33k, see 3.3). C38 100 nF on BST.
+- U6 MP1584EN-LF-Z (SOIC-8, exposed pad = GND): output 1V1 via L2 (10 uH). Catch diode D11 (SS34). R38 (12.4k) top, R39 (33k) bottom. R40 (100k) FREQ to GND. R41 (100k) and C31 (470 nF) EN delay. C33 100 nF BST. COMP RC network: the net `U6_COMP_RC` exists. R3 150 kohm and C3 100 pF (calculated, see 3.3). C6 value still to confirm.
 - U7 LP5907MFX-2.5 (SOT-23-5): 3V3 in, 2V5 out. C30 (10 uF) on input, C42 (10 uF electrolytic) on output. R43 (100k) 3V3 to EN, C32 (470 nF) EN to GND.
 - VM_IN: from J9 barrel jack, through FB1, to D8/D9 (SS34) OR with USB VBUS. VM_IN also goes to J6 pin 1.
 - U8 USBLC6-2SC6: ESD on USB_DP and USB_DN, VBUS clamp.
@@ -226,7 +226,7 @@ Step 9. Write REPORT.md (section 8) and save the board as `sv16_board_netted.kic
 5. Net check. Each net-name default applied. Every difference found against the schematic or section 4.
 6. Planes and stackup. What was set, and whether any zone was filled.
 7. Parts not in hand (section 3.4).
-8. Decisions taken: L2 10 uH; Y1 ECS-3225MV-250; C23 to 25 V; J6 shrouded keyed header; U5 FB to 3V3; net names kept as in the file, spec names recorded in REPORT.md; G*** logo left removed; J3 back to original position; FB1 to 0805. Still open and to report: R44 (no value), U6 COMP RC values, and the unverified values R45, R48, R49, C34, C35.
+8. Decisions taken: L2 10 uH; Y1 ECS-3225MV-250; C23 to 25 V; J6 shrouded keyed header; U5 FB to 3V3; net names kept as in the file, spec names recorded in REPORT.md; G*** logo left removed; J3 back to original position; FB1 to 0805. Still open: R44 (no value), C6 value (needs output ESR), ECS land pattern confirmation, and the schematic check of R44, R45, C34, C35 (no schematic in the repo).
 9. Final counts: footprints, tracks (must be 0), vias (must be 0), nets, unconnected (expected to be high; report the number).
 10. File list with paths.
 
