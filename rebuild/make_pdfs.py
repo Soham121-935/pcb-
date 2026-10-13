@@ -58,11 +58,11 @@ todo=[
   'R47 (10k): change footprint from R_1206 to R_0603. Use the 5% 0603 part (YAGEO RC0603JR-0710KL), already in cart.',
  ]),
  ('B. Value decisions still open (you decide, then set the value in KiCad)', [
-  'R44: no value in spec or board. Leave unset and report it.',
-  'R45: 100k on board, not in spec. Probably unnecessary. Remove unless the schematic shows a use.',
-  'R48, R49: AP62300 EN divider from VM_IN. Keep 100k (R48) and 33k (R49). At 12 V, EN = 2.98 V, under the 6 V EN pin limit. AP62300 EN threshold is 1.2 V typ (1.25 V max) rising, so the buck starts at about 4.7 to 4.9 V VIN (minimum VIN is 4.2 V). Checked against the Diodes DS41958 datasheet.',
-  'C34: 100 nF on board, not in spec. Probably unnecessary. Remove unless the schematic shows a use.',
-  'C35: 100 pF on board, not in spec. Probably unnecessary. Remove unless the schematic shows a use.',
+  'R44: 1k in schematic, LED D7 current limit (3V3 to D7). Keep, value 1k.',
+  'R45: COMP resistor. Schematic says 10k, board 100k. Recommended 150k (datasheet method). Change the schematic to 150k.',
+  'R48, R49: AP62300 EN divider, 100k (R48, top) and 33k (R49, bottom). Matches the schematic. At 12 V, EN = 2.98 V, under the 6 V EN pin limit. EN threshold 1.2 V typ (Diodes DS41958), so the buck starts at about 4.7 to 4.9 V VIN.',
+  'C34: 100 nF, CH340G V3 decoupling in schematic. Keep.',
+  'C35: COMP capacitor. Schematic says 100 nF, board 100 pF. Recommended 100 pF. Change the schematic to 100 pF.',
  ]),
  ('C. Values already changed in the step-1 copy (verify in KiCad)', [
   'Q2: BC817 changed to MMBT3904. Q4: BC807 changed to MMBT3906 (SOT-23, same pinout per spec).',
@@ -72,7 +72,7 @@ todo=[
  ]),
  ('D. Schematic / design checks from the spec (must be fixed in the schematic)', [
   'U5 (AP62300) pin 4 (FB) must be connected to 3V3. Spec says the earlier sheet left it floating.',
-  'U6 (MP1584) COMP: R3 = 150 kohm in series with C3 = 100 pF to GND (COMP pin 3). Calculated with the MP1584EN datasheet method: fsw 900 kHz (R40 = 100k), fc 90 kHz, C2 = 100 uF, Vout 1.1 V. Check: zero at 10.6 kHz, below fc/4. C6 (second cap, COMP to GND) is needed if the output ESR zero is below fsw/2, which is likely with the tantalum C21. C6 value is not calculated: confirm the output ESR and the datasheet C6 equation before fitting.',
+  'U6 (MP1584) COMP: R45 = 150 kohm and C35 = 100 pF (COMP to GND, via U6_COMP_RC). Calculated with the MP1584EN datasheet method: fsw 911 kHz (R40 = 100k), fc about 91 kHz, C2 = 100 uF, Vout 1.1 V. Schematic currently says 10k and 100n, which must be changed. C6 (second COMP cap) is not in the schematic: needed if the output ESR zero is below fsw/2, likely with C21 tantalum. Confirm the output ESR before deciding.',
   'U6 feedback divider: R38 = 12.4k top, R39 = 33k bottom (already set). Keep R39 below 40k.',
   'C23: change to 470 uF 25 V electrolytic (same CP_Elec_8x10.5 footprint). 16 V on 12 V is 75% of rated, too close to the limit.',
   'Oscillator Y1 (ECS-3225MV-250): pin 1 Tri-state (high or NC = active), pin 2 GND, pin 3 OUT, pin 4 VDD. Confirm the pad footprint against the ECS land pattern.',
@@ -95,7 +95,7 @@ todo=[
  ('G. Agent handoff (for whoever makes the PCB changes)', [
   'Starting file: SBSV-16_rebuild_step1_values.kicad_pcb (in this folder). It has the same 141 footprints, positions and 4-layer stackup as SBSV-16.kicad_pcb, with 37 values changed. Do not move components. Do not change pad numbers or net names without the decision in G3.',
   'G1 Exact KiCad footprint names (verify each exists in your library before use): Y1 current Oscillator:Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm. Bought part is ECS-3225MV-250, a 4-pad 3.2x2.5 mm XO. Board pads are 1.3 x 1.1 mm at (+-1.05, +-0.825). The ECS suggested land pattern labels read as pads 1.4 x 1.2 mm at (+-1.10, +-0.80) (read from figure labels, verify against the ECS drawing). Replace the footprint with the ECS pattern before routing. Y2 change to Crystal:Crystal_SMD_HC49-SD (or the footprint for the bought SMD HC49/U crystal). L1, L2 change to Inductor_SMD:L_Sunlord_MWSA0518_5.4x5.2mm (name from spec; confirm pads against the bought CD54 datasheet). C25, C30 Capacitor_SMD:CP_Elec_4x5.4. C32 Capacitor_SMD:C_0603_1608Metric. C36, C37 Capacitor_SMD:C_0805_2012Metric. R5, R25 Resistor_SMD:R_0805_2012Metric. R6, R7, R8 Resistor_SMD:R_1206_3216Metric. R9-R12 Resistor_SMD:R_0805_2012Metric. R47 Resistor_SMD:R_0603_1608Metric. R21-R24 solder-bridge pads (or R_0603 footprint with 0 ohm). J7 Connector_PinHeader_2.54mm:PinHeader_2x25_P2.54mm_Vertical, not fitted. D6 mark DNP.',
-  'G2 Y1 pinout (ECS-3225MV datasheet): pin 1 Tri-state (high or NC = active, low = high-Z), pin 2 GND, pin 3 OUT, pin 4 VDD. Map pads 1-4 to these before routing.',
+  'G2 Y1 pinout: verified against the schematic. Y1 pin 1 = 3V3 (enable, active), pin 2 = GND, pin 3 = clk_25m (OUT), pin 4 = 3V3 (VDD). This matches the ECS-3225MV pinout (1 Tri-state, 2 GND, 3 OUT, 4 VDD).',
   'G3 Net-name decisions (choose one per row before routing): USB pair: board uses USB_DP/USB_DN, spec uses USB_D+/USB_D-. Decision: file names kept, spec names recorded in REPORT.md. 5 V rail: board uses 5V_USB, spec uses 5V (J3/J4 pins 17/18). Decision: file name 5V_USB kept, spec name 5V recorded in REPORT.md. All other spec nets (clk_25m, ext_rst_n, uart_rx/tx, flash_*, spi0_*, VM_IN, 3V3, 2V5, 1V1, GND) are already in the file.',
   'G4 Design rules (spec section 7): signal track 0.25 mm; 3V3, 1V1, 2V5 power tracks 0.8 mm; VM_IN 1.5 mm; switching nodes (U5 OUT-L1, U6 SW-L2) 0.8 mm and short. Clearance 0.2 mm minimum, 0.5 mm between switching nets and JTAG/flash nets. Vias 0.2 mm drill / 0.4 mm pad; power vias 0.3 / 0.6 mm. USB_D+/USB_D- 90 ohm differential, 0.2 mm gap, length matched within 0.5 mm. FPGA decoupling caps C2-C20 within 3 mm of their pin, via first at the pad. Each FPGA GND pin gets its own via to the GND plane. Y1 within 10 mm of pin 133, no via in the clock trace, ground pour under it, 5 mm or more from switching nodes. U2 within 15 mm of FPGA pins 46/47/49/54; R9-R12 at the FPGA end. J6 GND return separate from FPGA ground. No copper pour under USB-C shield pads or barrel jack body. TP1-TP6 on top side.',
   'G5 Strip the old routing first: the uploaded file still has 1,783 tracks and 179 vias from the old routing. Delete all tracks and vias in KiCad (select all, filter to tracks and vias, delete). Keep every footprint in place. Do not merge or copy old routing (routing_state.json, routing.kicad_pcb.txt, sv16_board_working.kicad_pcb). Confirm the board then shows 0 tracks and 0 vias and all nets unconnected.',

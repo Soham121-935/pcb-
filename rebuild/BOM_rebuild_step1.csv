@@ -32,8 +32,8 @@ C40,22uF electrolytic (decision),22uF 63V electrolytic,CP_Elec_6.3x5.4,22,OK
 C41,22uF electrolytic (decision),22uF 63V electrolytic,CP_Elec_6.3x5.4,22,OK
 C42,10uF electrolytic (decision),10uF 35V electrolytic,CP_Elec_4x5.4,11,OK
 C32,470nF 0603 (spec),470nF,C_0805 - footprint NOT changed,20 (470nF 0603),footprint change pending (0603)
-C34,not in spec,100nF,0603,40,"KEEP board value (not in spec, purpose unverified) - report"
-C35,not in spec,100pF,0603,0,"KEEP board value (not in spec, purpose unverified) - report"
+C34,"CH340G V3 decoupling (U4 pin 4 to GND), in schematic",100nF,0603,40,"KEEP (in schematic, required for CH340G)"
+C35,"COMP capacitor (U6_COMP_RC to GND). Schematic says 100n, board 100pF",100pF (recommended),0603,0,BUY/CHECK 100pF 0603 C0G. Change schematic C35 from 100n to 100pF.
 C36,22pF C0G 0805 50V 5% (YAGEO CC0805JRNPO9BN220),22pF,0603 - change to 0805,0,BUY 22 pF 0805 C0G; PENDING footprint change 0603->0805
 C37,22pF C0G 0805 50V 5% (YAGEO CC0805JRNPO9BN220),22pF,0603 - change to 0805,0,BUY (see C36); PENDING footprint change 0603->0805
 C1-C20,100nF 0603,100nF,0603,40 (shared),OK
@@ -62,8 +62,8 @@ R39,33k 1206,33k (changed),1206,(33k 1206 pack),OK
 R40,100k 0603,100k (changed),0603,11 (thin film),OK
 R41,100k 0603,100k (changed),0603,(shared),OK
 R43,100k 0603,100k (changed),0603,(shared),OK
-R44,not in spec,R44 (no value),0603,-,LEAVE UNSET (no value anywhere) - report
-R45,not in spec,100k,0603,(shared),"KEEP board value (not in spec, purpose unverified) - report"
+R44,"LED D7 current limit (3V3 to D7 red LED), 1k in schematic",1k,0603,0,"CHECK stock for 1k 0603, buy if none. Board had no value; schematic says 1k."
+R45,"COMP resistor (U6 COMP to U6_COMP_RC). Schematic says 10k, board 100k, calculation 150k",150k (recommended),0603,0,BUY 150k 0603. Change schematic R45 from 10k to 150k.
 R46,33k 1206,33k (changed),1206,(shared),OK
 R47,"10k 0603 1% (YAGEO RC0603JR-0710KL, 5%)",10k,1206 - change to 0603,0,BUY 10k 0603 5% (Yageo RC0603JR-0710KL); footprint change 1206->0603
 R48,AP62300 EN divider (value not given in spec),100k,0603,(shared),"KEEP board value (not in spec, purpose unverified) - report"
