@@ -162,8 +162,8 @@ Key connections (check these pads):
 - pwm_out, motor_dir1, motor_dir2, motor_fault_n (pins 88, 89, 102, 103): J6 pins 3 to 6.
 
 Power and regulators:
-- U5 AP62300TWU-7 (SOT-23-6): VIN from VM_IN, SW to L1 (10 uH) to 3V3. FB pin must be on net 3V3 (spec correction 1). Connect `U5_FB` to 3V3 as the spec says, and report the change. R46 (33k) and R47 (10k) feedback divider. R48 and R49: EN divider from VM_IN (schematic values 100k and 33k, confirmed). C38 100 nF on BST.
-- U6 MP1584EN-LF-Z (SOIC-8, exposed pad = GND): output 1V1 via L2 (10 uH). Catch diode D11 (SS34). R38 (12.4k) top, R39 (33k) bottom. R40 (100k) FREQ to GND. R41 (100k) and C31 (470 nF) EN delay. C33 100 nF BST. COMP RC network: the net `U6_COMP_RC` exists. R45 150 kohm and C35 100 pF (calculated, see 3.3). C6 to confirm.
+- U5 AP62300TWU-7 (SOT-23-6): VIN from VM_IN, SW to L1 (10 uH) to 3V3. FB pin: keep the divider R46 (33k, from 3V3 to U5_FB) and R47 (10k, from U5_FB to GND). Do NOT connect U5_FB to 3V3. Output = 0.763 x (1 + 33/10) = 3.28 V. R46 (33k) and R47 (10k) feedback divider. R48 and R49: EN divider from VM_IN (schematic values 100k and 33k, confirmed). C38 100 nF on BST.
+- U6 MP1584EN-LF-Z (SOIC-8, exposed pad = GND): output 1V1 via L2 (10 uH). Catch diode D11 (SS34). R38 (12.4k) top, R39 (33k) bottom. R40 (100k) FREQ to GND. R41 (100k) and C31 (470 nF) EN delay. C33 100 nF BST. COMP RC network: the net `U6_COMP_RC` exists. R45 150 kohm and C35 100 pF (calculated, see 3.3). C6 is not fitted (report it).
 - U7 LP5907MFX-2.5 (SOT-23-5): 3V3 in, 2V5 out. C30 (10 uF) on input, C42 (10 uF electrolytic) on output. R43 (100k) 3V3 to EN, C32 (470 nF) EN to GND.
 - VM_IN: from J9 barrel jack, through FB1, to D8/D9 (SS34) OR with USB VBUS. VM_IN also goes to J6 pin 1.
 - U8 USBLC6-2SC6: ESD on USB_DP and USB_DN, VBUS clamp.
@@ -179,7 +179,7 @@ The board uses two names that differ from the spec. The user has not decided the
 | Item | Board uses | Spec uses | DEFAULT |
 |---|---|---|---|
 | USB data pair | USB_DP, USB_DN | USB_D+, USB_D- | Keep USB_DP and USB_DN |
-| 5 V rail | 5V_USB | 5V (J3, J4 pins 17, 18) | Keep 5V_USB |
+| 5 V rail | 5V_USB | 5V (J3, J4 pins 17, 18) | Keep 5V_USB. The schematic must tie 5V_USB to USB_VBUS (spec: 5 V pins are VBUS only). Report this; do not change connectivity. |
 
 Do not rename any other net. The file already has these nets: clk_25m, ext_rst_n, uart_rx, uart_tx, flash_sck, flash_cs_n, flash_mosi, flash_miso, spi0_sck, spi0_cs_n, spi0_mosi, spi0_miso, VM_IN, VM_IN_RAW, 3V3, 2V5, 1V1, GND, CCLK, DONE, INITN, PROGRAMN, TCK, TMS, TDI, TDO, U2_CLK, U2_CS, U2_DI, U2_DO, U2_HOLD, U2_WP, U3_HOLD, U3_WP, U4_DTR, U4_RXD, U4_TXD, U4_V3, U5_BST, U5_EN, U5_FB, U5_SW, U6_BST, U6_COMP, U6_COMP_RC, U6_EN, U6_FREQ, U6_SW, U7_EN, Y2_XI, Y2_XO, led0 to led3 (and led0_k to led3_k), motor_dir1, motor_dir2, motor_fault_n, pwm_out, A0 to A15, B0 to B15, CC1, CC2, CFG_0, CFG_1, CFG_2, D1_A, D6_K, D7_A, DTR_F, FB_1V1, J9_VIN, J10_RX, J10_TX, Q1_G, Q2_B, Q2_C, Q4_B, Q4_C, USB_DN_F, USB_DP_F, USB_VBUS.
 
@@ -228,7 +228,7 @@ Step 9. Write REPORT.md (section 8) and save the board as `sv16_board_netted.kic
 5. Net check. Each net-name default applied. Every difference found against the schematic or section 4.
 6. Planes and stackup. What was set, and whether any zone was filled.
 7. Parts not in hand (section 3.4).
-8. Decisions taken: L2 10 uH; Y1 ECS-3225MV-250; C23 to 25 V; J6 shrouded keyed header; U5 FB to 3V3; net names kept as in the file, spec names recorded in REPORT.md; G*** logo left removed; J3 back to original position; FB1 to 0805. Still open: C6 on COMP (not in schematic; needs output ESR), the schematic edits for R45 (10k to 150k) and C35 (100n to 100pF), and the ECS-3225MV pad footprint check on Y1.
+8. Decisions taken: L2 10 uH; Y1 ECS-3225MV-250; C23 to 25 V; J6 shrouded keyed header; U5 FB divider kept (not 3V3); net names kept as in the file, spec names recorded in REPORT.md; G*** logo left removed; J3 back to original position; FB1 to 0805. Still open: C6 on COMP (not in schematic; needs output ESR), the schematic edits for R45 (10k to 150k) and C35 (100n to 100pF), and the ECS-3225MV pad footprint check on Y1.
 9. Final counts: footprints, tracks (must be 0), vias (must be 0), nets, unconnected (expected to be high; report the number).
 10. File list with paths.
 

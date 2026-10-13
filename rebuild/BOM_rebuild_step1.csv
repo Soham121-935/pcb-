@@ -1,7 +1,7 @@
 Ref,Spec part,Board value (step1),Footprint (board),Bought (cart),Status
 U1,LFE5U-12F-6TG144C,LFE5U-12F-6TG144C,LQFP-144,0,BUY (FPGA)
 U2,W25Q64JVSSIQ,W25Q64JVSSIQ,SOIC-8 5.3x6.2,1,OK (have 1 of 1)
-U3,W25Q64JVSSIQ,W25Q64JVSSIQ,SOIC-8 5.3x6.2,1,BUY 1 more (need 2 total)
+U3,W25Q64JVSSIQ,W25Q64JVSSIQ,SOIC-8 5.3x6.2,1,IN CART (qty 1); with 1 owned = 2 total. Covered.
 Y1,Active 25 MHz XO 3.2x2.5 4-pad (ECS-3225MV-250),25 MHz ACTIVE XO,ASE-4Pin 3.2x2.5 (verify pads vs ECS land pattern),0,BUY ECS-3225MV-250 (3 passive crystals bought - NOT usable here)
 Y2,"12 MHz crystal HC49/U surface mount (passive 2-pin, OK for CH340G)",12 MHz,HC49-4H (THT) - change to SMD HC49/US,0,BUY 12 MHz SMD crystal; PENDING footprint change to SMD HC49
 U4,CH340G,CH340G,SOIC-16,1,OK
