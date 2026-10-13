@@ -117,16 +117,18 @@ FB1 (600R ferrite): change the footprint to 0805 (Inductor_SMD:L_0805_2012Metric
 - ADD J7: footprint Connector_PinHeader_2.54mm:PinHeader_2x25_P2.54mm_Vertical, marked NOT FITTED (DNP). Spec: footprint only. J7 pads are not connected to nets unless the spec says so.
 - D6 (red LED, INITN indicator): mark DNP. Keep footprint and nets.
 - J2 (1.27 mm 2x5 box header): mark DNP. Spec allows leaving it unpopulated and using J1.
-- J6 (MOTOR, keyed): keep the 1x6 header. Add a keying note to the silkscreen or flag it in REPORT.md.
-- UNDECIDED values, leave as they are and report: R44 (no spec value), R45 (100k, not in spec), R48 and R49 (AP62300 EN divider; board 100k and 33k; confirm against datasheet), C34 (100 nF, not in spec), C35 (100 pF, not in spec).
+- J6 (MOTOR, keyed): use a shrouded, keyed 1x6 2.54 mm header (the shroud key stops reversed insertion). Keep the 1x6 footprint. Record in REPORT.md.
+- J3: move back to its original position (x 194.65 mm, y 120.24 mm, as in the source board). Do not move any other component.
+- G*** logo footprint: leave it removed and record that in REPORT.md.
+- Values kept from the board, not in spec. Keep them and report their purpose as unverified: R45 (100k), R48 (100k, EN divider top), R49 (33k, EN divider bottom), C34 (100 nF), C35 (100 pF). R44: no value anywhere, leave it unset and report it. U6 COMP RC network: no values in the spec or the board, leave it unset and report the inputs needed (L2 value, output capacitor value and type, 1V1 target).
 - C39, C40, C41, C42 stay ELECTROLYTIC (user decision). Do not change to ceramic.
-- C23 is 470 uF 16 V on a 12 V input. Keep it. Report the derating (1.33x).
+- C23: change to 470 uF 25 V electrolytic, same CP_Elec_8x10.5 footprint. Reason: 16 V on a 12 V input is 75% of rated voltage, too close to the limit for an electrolytic. 25 V gives about 48%. Report the change.
 
 ### 3.4 Parts not yet in hand (report them, do not change the design because of them)
 
 - U1 FPGA LFE5U-12F-6TG144C (not bought)
 - U3 second W25Q64JVSSIQ (1 of 2 bought)
-- Y1 YIC OSC25M-3.3I/S3-25T (active, 4-SMD 3.2x2.5 mm, not yet in hand)
+- Y1 ECS-3225MV-250 (active 25 MHz XO, 3.2x2.5 mm, 4 pads, 1.62 to 3.63 V, CMOS 15 pF). Pin 1 Tri-state (high or NC = active, low = high-Z), pin 2 GND, pin 3 OUT, pin 4 VDD. Not yet in hand.
 - Y2 12 MHz SMD crystal (not bought)
 - D8, D9, D11: third SS34 (2 of 3 bought)
 - 10k 0603 5% resistors: 12 pieces (Yageo RC0603JR-0710KL, in cart, qty 110): R1, R13-R19, R26, R32 and R47. The user uses 5% parts only.
@@ -158,8 +160,8 @@ Key connections (check these pads):
 - pwm_out, motor_dir1, motor_dir2, motor_fault_n (pins 88, 89, 102, 103): J6 pins 3 to 6.
 
 Power and regulators:
-- U5 AP62300TWU-7 (SOT-23-6): VIN from VM_IN, SW to L1 (10 uH) to 3V3. FB pin must be on net 3V3 (spec correction 1; the net `U5_FB` exists in the file, connect it to 3V3 only if the schematic says so, otherwise report it). R46 (33k) and R47 (10k) feedback divider. R48 and R49: EN divider from VM_IN (values UNDECIDED). C38 100 nF on BST.
-- U6 MP1584EN-LF-Z (SOIC-8, exposed pad = GND): output 1V1 via L2 (10 uH). Catch diode D11 (SS34). R38 (12.4k) top, R39 (33k) bottom. R40 (100k) FREQ to GND. R41 (100k) and C31 (470 nF) EN delay. C33 100 nF BST. COMP RC network: the net `U6_COMP_RC` exists. Values are not in the spec: mark UNDECIDED.
+- U5 AP62300TWU-7 (SOT-23-6): VIN from VM_IN, SW to L1 (10 uH) to 3V3. FB pin must be on net 3V3 (spec correction 1). Connect `U5_FB` to 3V3 as the spec says, and report the change. R46 (33k) and R47 (10k) feedback divider. R48 and R49: EN divider from VM_IN (values UNDECIDED). C38 100 nF on BST.
+- U6 MP1584EN-LF-Z (SOIC-8, exposed pad = GND): output 1V1 via L2 (10 uH). Catch diode D11 (SS34). R38 (12.4k) top, R39 (33k) bottom. R40 (100k) FREQ to GND. R41 (100k) and C31 (470 nF) EN delay. C33 100 nF BST. COMP RC network: the net `U6_COMP_RC` exists. Values are not in the spec or the board: leave unset and report the inputs needed.
 - U7 LP5907MFX-2.5 (SOT-23-5): 3V3 in, 2V5 out. C30 (10 uF) on input, C42 (10 uF electrolytic) on output. R43 (100k) 3V3 to EN, C32 (470 nF) EN to GND.
 - VM_IN: from J9 barrel jack, through FB1, to D8/D9 (SS34) OR with USB VBUS. VM_IN also goes to J6 pin 1.
 - U8 USBLC6-2SC6: ESD on USB_DP and USB_DN, VBUS clamp.
@@ -224,7 +226,7 @@ Step 9. Write REPORT.md (section 8) and save the board as `sv16_board_netted.kic
 5. Net check. Each net-name default applied. Every difference found against the schematic or section 4.
 6. Planes and stackup. What was set, and whether any zone was filled.
 7. Parts not in hand (section 3.4).
-8. Open decisions for the user: USB and 5 V net names (defaults applied), C39 to C42 (electrolytic applied), R44, R45, R48, R49, C34, C35 (undecided), U6 COMP RC values (not in spec), C23 16 V on 12 V (derating kept), FB1 0805 footprint change (part in cart), J6 keying.
+8. Decisions taken: L2 10 uH; Y1 ECS-3225MV-250; C23 to 25 V; J6 shrouded keyed header; U5 FB to 3V3; net names kept as in the file, spec names recorded in REPORT.md; G*** logo left removed; J3 back to original position; FB1 to 0805. Still open and to report: R44 (no value), U6 COMP RC values, and the unverified values R45, R48, R49, C34, C35.
 9. Final counts: footprints, tracks (must be 0), vias (must be 0), nets, unconnected (expected to be high; report the number).
 10. File list with paths.
 

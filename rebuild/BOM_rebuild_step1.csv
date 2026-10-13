@@ -2,7 +2,7 @@ Ref,Spec part,Board value (step1),Footprint (board),Bought (cart),Status
 U1,LFE5U-12F-6TG144C,LFE5U-12F-6TG144C,LQFP-144,0,BUY (FPGA)
 U2,W25Q64JVSSIQ,W25Q64JVSSIQ,SOIC-8 5.3x6.2,1,OK (have 1 of 1)
 U3,W25Q64JVSSIQ,W25Q64JVSSIQ,SOIC-8 5.3x6.2,1,BUY 1 more (need 2 total)
-Y1,Active 25 MHz XO 3.2x2.5 4-pad (YIC OSC25M-3.3I/S3-25T),25 MHz ACTIVE XO,ASE-4Pin 3.2x2.5,0 active (3 passive 25 MHz HC49/US crystals bought - NOT usable here),BUY active XO
+Y1,Active 25 MHz XO 3.2x2.5 4-pad (ECS-3225MV-250),25 MHz ACTIVE XO,ASE-4Pin 3.2x2.5 (verify pads vs ECS land pattern),0,BUY ECS-3225MV-250 (3 passive crystals bought - NOT usable here)
 Y2,"12 MHz crystal HC49/U surface mount (passive 2-pin, OK for CH340G)",12 MHz,HC49-4H (THT) - change to SMD HC49/US,0,BUY 12 MHz SMD crystal; PENDING footprint change to SMD HC49
 U4,CH340G,CH340G,SOIC-16,1,OK
 U5,AP62300TWU-7,AP62300TWU-7,SOT-23-6,1,OK
@@ -23,7 +23,7 @@ L2,10 uH CD54 >=1.5A,10 uH,SWPA6045S footprint (spec: MWSA0518) - footprint NOT 
 FB1,600R @100MHz 0805 (MPZ2012S601ATD25),600R @100MHz,0805,2,IN CART (TDK MPZ2012S601ATD25, qty 2); footprint change 0603->0805
 C21,100uF 25V D-case tant,100uF 25V tant,CP_EIA-7343-31,1,OK
 C22,22uF 63V electrolytic,22uF 63V electrolytic,CP_Elec_6.3x5.4,22,OK
-C23,470uF 16V electrolytic,470uF 16V,CP_Elec_8x10.5,11,OK
+C23,470uF 25V electrolytic (CHANGED from 16V),470uF 25V,CP_Elec_8x10.5,0,BUY 470uF 25V (16V stock not used for C23; derating 75% too high)
 C24,220uF 25V hybrid,220uF 25V hybrid,CP_Elec_8x10.5,11,OK
 C25,10uF 0805 ceramic (spec) -> 10uF 35V electrolytic (decision),10uF,C_0805 - footprint NOT changed,11 (10uF 35V electrolytic),footprint change pending (CP_Elec_4x5.4)
 C30,10uF 0805 ceramic (spec) -> 10uF 35V electrolytic (decision),10uF,C_0805 - footprint NOT changed,11,footprint change pending
@@ -32,8 +32,8 @@ C40,22uF electrolytic (decision),22uF 63V electrolytic,CP_Elec_6.3x5.4,22,OK
 C41,22uF electrolytic (decision),22uF 63V electrolytic,CP_Elec_6.3x5.4,22,OK
 C42,10uF electrolytic (decision),10uF 35V electrolytic,CP_Elec_4x5.4,11,OK
 C32,470nF 0603 (spec),470nF,C_0805 - footprint NOT changed,20 (470nF 0603),footprint change pending (0603)
-C34,not in spec,100nF,0603,40,UNDECIDED (remove or leave)
-C35,not in spec,100pF,0603,0,UNDECIDED (remove or leave)
+C34,not in spec,100nF,0603,40,"KEEP board value (not in spec, purpose unverified) - report"
+C35,not in spec,100pF,0603,0,"KEEP board value (not in spec, purpose unverified) - report"
 C36,22pF C0G 0805 50V 5% (YAGEO CC0805JRNPO9BN220),22pF,0603 - change to 0805,0,BUY 22 pF 0805 C0G; PENDING footprint change 0603->0805
 C37,22pF C0G 0805 50V 5% (YAGEO CC0805JRNPO9BN220),22pF,0603 - change to 0805,0,BUY (see C36); PENDING footprint change 0603->0805
 C1-C20,100nF 0603,100nF,0603,40 (shared),OK
@@ -62,18 +62,18 @@ R39,33k 1206,33k (changed),1206,(33k 1206 pack),OK
 R40,100k 0603,100k (changed),0603,11 (thin film),OK
 R41,100k 0603,100k (changed),0603,(shared),OK
 R43,100k 0603,100k (changed),0603,(shared),OK
-R44,not in spec,R44 (no value),0603,-,UNDECIDED
-R45,not in spec,100k,0603,(shared),UNDECIDED (not in spec)
+R44,not in spec,R44 (no value),0603,-,LEAVE UNSET (no value anywhere) - report
+R45,not in spec,100k,0603,(shared),"KEEP board value (not in spec, purpose unverified) - report"
 R46,33k 1206,33k (changed),1206,(shared),OK
 R47,"10k 0603 1% (YAGEO RC0603JR-0710KL, 5%)",10k,1206 - change to 0603,0,BUY 10k 0603 5% (Yageo RC0603JR-0710KL); footprint change 1206->0603
-R48,AP62300 EN divider (value not given in spec),100k,0603,(shared),UNDECIDED
-R49,AP62300 EN divider (value not given in spec),33k,1206,(shared),UNDECIDED
+R48,AP62300 EN divider (value not given in spec),100k,0603,(shared),"KEEP board value (not in spec, purpose unverified) - report"
+R49,AP62300 EN divider (value not given in spec),33k,1206,(shared),"KEEP board value (not in spec, purpose unverified) - report"
 J1,"Standard 2.54 mm straight male pin header, 1x10 (most available). Footprint unchanged.",JTAG,2.54mm 1x10,0,USER HAS (not in screenshots) - confirm
 J2,Spec: 1.27 mm 2x5 box header. Less common; leave unpopulated and use J1 (spec option).,JTAG-1.27,1.27mm 2x5,0,OPTIONAL
 J3,"Standard 2.54 mm straight male pin header, 2x10 (most available). Footprint unchanged.",EXP-A,2.54mm 2x10,0,USER HAS (not in screenshots) - confirm
 J4,"Standard 2.54 mm straight male pin header, 2x10 (most available). Footprint unchanged.",EXP-B,2.54mm 2x10,0,USER HAS (not in screenshots) - confirm
 J5,"Standard 2.54 mm straight male pin header, 1x10 (most available). Footprint unchanged.",EXP-C,2.54mm 1x10,0,USER HAS (not in screenshots) - confirm
-J6,"Standard 2.54 mm straight male pin header, 1x6 (most available). Spec says keyed: add keying notch, or use a shrouded 1x6 header.",MOTOR,2.54mm 1x6,0,USER HAS (not in screenshots) - confirm
+J6,Shrouded keyed 1x6 2.54 mm header (motor connector),MOTOR,2.54mm 1x6,0,BUY shrouded keyed 1x6 2.54 mm (or confirm you have one)
 J7,"Standard 2.54 mm straight male pin header, 2x25 (footprint only, not fitted).",absent,-,0,ADD footprint (not fitted)
 J8,USB-C 16-pin HRO,USB-C,HRO TYPE-C-31-M-12,4,OK
 J9,Barrel jack 5.5/2.1,7-12 V,CUI PJ-102AH,0,USER HAS (not in screenshots) - confirm
